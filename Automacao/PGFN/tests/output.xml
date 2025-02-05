@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.7 on darwin)" generated="2025-01-30T18:23:12.857795" rpa="false" schemaversion="5">
+<suite id="s1" name="PGFN 20290751000369" source="/Users/rafaellacavalcante/Asteca/Automacao/PGFN/tests/PGFN_20290751000369.robot">
+<test id="s1-t1" name="Caso de teste - Acessando o site PGFN e Buscando Parcelamento" line="5">
+<kw name="Abrir pagina" owner="PGFN_20290751000369_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-30T18:23:12.988093" level="INFO">Opening browser 'Chrome' to base url 'https://sisparnet.pgfn.fazenda.gov.br/sisparInternet/internet/darf/consultaParcelamentoDarfInternet.xhtml'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-30T18:23:12.987989" elapsed="8.998142"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-30T18:23:21.987702" elapsed="0.329572"/>
+</kw>
+<status status="PASS" start="2025-01-30T18:23:12.987624" elapsed="9.330381"/>
+</kw>
+<kw name="Preencher os dados do cliente" owner="PGFN_20290751000369_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-30T18:23:22.329604" level="INFO">Clicking element 'xpath=//*[contains(text(), "Permitir")]'.</msg>
+<arg>${PERMITIR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T18:23:22.326033" elapsed="0.226364"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-30T18:23:22.552801" level="INFO">Typing text '08870403000101' into text field 'id=formConsultaParcelamentoDarf:imNrCpfCnpjParcelamento'.</msg>
+<arg>${INPUT_CNPJ}</arg>
+<arg>${CNPJ}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T18:23:22.552583" elapsed="0.223026"/>
+</kw>
+<kw name="Obter Parcelamento" owner="nomes">
+<msg time="2025-01-30T18:23:22.869879" level="INFO">['010763787']</msg>
+<msg time="2025-01-30T18:23:22.870010" level="INFO">${OBTER_PARC} = ['010763787']</msg>
+<var>${OBTER_PARC}</var>
+<arg>${CNPJ}</arg>
+<status status="PASS" start="2025-01-30T18:23:22.775839" elapsed="0.094187"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-30T18:23:22.870314" level="INFO">Typing text '['010763787']' into text field 'id=formConsultaParcelamentoDarf:imNrContaParcelamento'.</msg>
+<arg>${INPUT_PARCELAMENTO}</arg>
+<arg>${OBTER_PARC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T18:23:22.870158" elapsed="0.067992"/>
+</kw>
+<status status="PASS" start="2025-01-30T18:23:22.322624" elapsed="0.615634"/>
+</kw>
+<kw name="Clique no Checkbox" owner="PGFN_20290751000369_keywords">
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2025-01-30T18:23:22.938844" level="INFO">Selecting frame 'xpath://iframe[contains(@src, 'hcaptcha')]'.</msg>
+<arg>${IFRAME_XPATH}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2025-01-30T18:23:22.938709" elapsed="0.017530"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-30T18:23:22.956500" level="INFO">Clicking element '//div[contains(@id, 'checkbox')]'.</msg>
+<arg>${CHECKBOX_CAPTCHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T18:23:22.956362" elapsed="0.058243"/>
+</kw>
+<kw name="Unselect Frame" owner="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" start="2025-01-30T18:23:23.014764" elapsed="0.010933"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-30T18:23:24.029162" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-30T18:23:23.025819" elapsed="1.005121"/>
+</kw>
+<status status="PASS" start="2025-01-30T18:23:22.938479" elapsed="1.092795"/>
+</kw>
+<kw name="Clique em &quot;Consultar&quot;" owner="PGFN_20290751000369_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-30T18:23:24.033703" level="INFO">Clicking element 'class=ui-button-text'.</msg>
+<arg>${CONSULTAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T18:23:24.033271" elapsed="0.549639"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-30T18:23:25.587091" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-30T18:23:24.583040" elapsed="1.004512"/>
+</kw>
+<status status="PASS" start="2025-01-30T18:23:24.031968" elapsed="1.555958"/>
+</kw>
+<kw name="Clicando em Download de documento" owner="PGFN_20290751000369_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-01-30T18:23:25.594540" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-01-30T18:23:25.589512" elapsed="0.014254"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-30T18:23:25.604599" level="INFO">Clicking element 'id=formResumoParcelamentoDarf:tabaplicacaoparcelamentoparcela:5:NNimpressaoDarf'.</msg>
+<msg time="2025-01-30T18:23:25.864397" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-30T18:23:25.864576" level="FAIL">Element with locator 'id=formResumoParcelamentoDarf:tabaplicacaoparcelamentoparcela:5:NNimpressaoDarf' not found.</msg>
+<arg>${MES_VIGENTE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-01-30T18:23:25.604145" elapsed="0.263208">Element with locator 'id=formResumoParcelamentoDarf:tabaplicacaoparcelamentoparcela:5:NNimpressaoDarf' not found.</status>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>Parcela para emissão</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2025-01-30T18:23:25.867488" elapsed="0.000016"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-01-30T18:23:25.867558" elapsed="0.000010"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${Emitir}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-30T18:23:25.867608" elapsed="0.000010"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-01-30T18:23:25.867656" elapsed="0.000008"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${Link_PDF}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-30T18:23:25.867701" elapsed="0.000008"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-01-30T18:23:25.867742" elapsed="0.000008"/>
+</kw>
+<status status="FAIL" start="2025-01-30T18:23:25.588737" elapsed="0.279076">Element with locator 'id=formResumoParcelamentoDarf:tabaplicacaoparcelamentoparcela:5:NNimpressaoDarf' not found.</status>
+</kw>
+<tag>cliente</tag>
+<tag>principal</tag>
+<status status="FAIL" start="2025-01-30T18:23:12.987307" elapsed="12.880650">Element with locator 'id=formResumoParcelamentoDarf:tabaplicacaoparcelamentoparcela:5:NNimpressaoDarf' not found.</status>
+</test>
+<status status="FAIL" start="2025-01-30T18:23:12.858535" elapsed="13.009773"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">cliente</stat>
+<stat pass="0" fail="1" skip="0">principal</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="PGFN 20290751000369">PGFN 20290751000369</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-01-30T18:23:12.985038" level="ERROR">Error in file '/Users/rafaellacavalcante/Asteca/Automacao/PGFN/resources/keywords/PGFN_20290751000369_keywords.resource' on line 6: Error in file '/Users/rafaellacavalcante/Asteca/Automacao/PGFN/tests/PGFN_20290751000369.robot' on line 4: Resource file with 'Test Cases' section is invalid.</msg>
+<msg time="2025-01-30T18:23:12.986981" level="ERROR">Error in file '/Users/rafaellacavalcante/Asteca/Automacao/PGFN/resources/variables/PGFN_20290751000369_variables.robot' on line 28: Setting variable '${Parcelamento}' failed: Resolving variable '${obter_parcelamento(08870403000101)}' failed: Variable '${obter_parcelamento}' not found.</msg>
+</errors>
+</robot>
