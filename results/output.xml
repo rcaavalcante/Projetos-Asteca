@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.7 on darwin)" generated="2025-01-30T19:46:26.446146" rpa="false" schemaversion="5">
+<suite id="s1" name="Asteca" source="/Users/rafaellacavalcante/Asteca">
+<suite id="s1-s1" name="Automacao" source="/Users/rafaellacavalcante/Asteca/Automacao">
+<suite id="s1-s1-s1" name="PGFN" source="/Users/rafaellacavalcante/Asteca/Automacao/PGFN">
+<suite id="s1-s1-s1-s1" name="Tests" source="/Users/rafaellacavalcante/Asteca/Automacao/PGFN/tests">
+<suite id="s1-s1-s1-s1-s1" name="PGFN 20290751000369" source="/Users/rafaellacavalcante/Asteca/Automacao/PGFN/tests/PGFN_20290751000369.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Caso de teste - Acessando o site PGFN e Buscando Parcelamento" line="5">
+<kw name="Abrir pagina" owner="PGFN_20290751000369_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-30T19:46:26.582694" level="INFO">Opening browser 'Chrome' to base url 'https://sisparnet.pgfn.fazenda.gov.br/sisparInternet/internet/darf/consultaParcelamentoDarfInternet.xhtml'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-30T19:46:26.582480" elapsed="2.852533"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-30T19:46:29.436760" elapsed="0.373512"/>
+</kw>
+<status status="PASS" start="2025-01-30T19:46:26.581917" elapsed="3.228768"/>
+</kw>
+<kw name="Preencher os dados do cliente" owner="PGFN_20290751000369_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-30T19:46:29.813913" level="INFO">Clicking element 'xpath=//*[contains(text(), "Permitir")]'.</msg>
+<arg>${PERMITIR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T19:46:29.812936" elapsed="0.235099"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-30T19:46:30.051223" level="INFO">Typing text '00075112000101' into text field 'id=formConsultaParcelamentoDarf:imNrCpfCnpjParcelamento'.</msg>
+<arg>${INPUT_CNPJ}</arg>
+<arg>${CNPJ}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T19:46:30.049585" elapsed="0.201145"/>
+</kw>
+<kw name="Obter Parcelamento" owner="nomes">
+<msg time="2025-01-30T19:46:30.474177" level="INFO">${OBTER_PARC} = 005790694</msg>
+<var>${OBTER_PARC}</var>
+<arg>${CNPJ}</arg>
+<status status="PASS" start="2025-01-30T19:46:30.250999" elapsed="0.223341"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-30T19:46:30.474859" level="INFO">Typing text '005790694' into text field 'id=formConsultaParcelamentoDarf:imNrContaParcelamento'.</msg>
+<arg>${INPUT_PARCELAMENTO}</arg>
+<arg>${OBTER_PARC}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T19:46:30.474547" elapsed="0.053747"/>
+</kw>
+<status status="PASS" start="2025-01-30T19:46:29.811655" elapsed="0.716825"/>
+</kw>
+<kw name="Clique no Checkbox" owner="PGFN_20290751000369_keywords">
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2025-01-30T19:46:30.529156" level="INFO">Selecting frame 'xpath://iframe[contains(@src, 'hcaptcha')]'.</msg>
+<arg>${IFRAME_XPATH}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2025-01-30T19:46:30.528997" elapsed="0.017201"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-30T19:46:30.546589" level="INFO">Clicking element '//div[contains(@id, 'checkbox')]'.</msg>
+<arg>${CHECKBOX_CAPTCHA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T19:46:30.546368" elapsed="0.074006"/>
+</kw>
+<kw name="Unselect Frame" owner="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" start="2025-01-30T19:46:30.620842" elapsed="0.002336"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-30T19:46:31.625591" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-30T19:46:30.623350" elapsed="1.003042"/>
+</kw>
+<status status="PASS" start="2025-01-30T19:46:30.528720" elapsed="1.098238"/>
+</kw>
+<kw name="Clique em &quot;Consultar&quot;" owner="PGFN_20290751000369_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-30T19:46:31.630049" level="INFO">Clicking element 'class=ui-button-text'.</msg>
+<arg>${CONSULTAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-30T19:46:31.629427" elapsed="0.430883"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-30T19:46:33.069357" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-30T19:46:32.066786" elapsed="1.002952"/>
+</kw>
+<status status="PASS" start="2025-01-30T19:46:31.627930" elapsed="1.442061"/>
+</kw>
+<kw name="Clicando em Download de documento" owner="PGFN_20290751000369_keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${MES_VIGENTE}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-01-30T19:46:33.070835" elapsed="0.285663"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-01-30T19:46:33.359720" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-01-30T19:46:33.356857" elapsed="0.013651"/>
+</kw>
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<kw name="Verificar Data Mes Ano" owner="factory">
+<msg time="2025-01-30T19:46:33.393218" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.392939" elapsed="0.000461">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.393645" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.392781" elapsed="0.000964">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.393920" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.392618" elapsed="0.001382">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.394177" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.392450" elapsed="0.001805">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.394418" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.392272" elapsed="0.002223">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.394671" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.391479" elapsed="0.003349">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.395034" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.391163" elapsed="0.003995">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.395411" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.390898" elapsed="0.004598">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.395732" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.390739" elapsed="0.005060">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.395951" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.390576" elapsed="0.005444">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.396168" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.390405" elapsed="0.005836">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.396391" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.390251" elapsed="0.006207">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.396610" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.390091" elapsed="0.006586">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.396824" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.389937" elapsed="0.006949">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.397035" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.389771" elapsed="0.007328">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.397244" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.389566" elapsed="0.007798">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.397508" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.389397" elapsed="0.008177">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.397720" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.389238" elapsed="0.008546">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.398166" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.389083" elapsed="0.009182">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.398451" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.388873" elapsed="0.009669">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.398757" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.388511" elapsed="0.010371">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.399212" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.388287" elapsed="0.011023">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.399476" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.388124" elapsed="0.011429">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.399697" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.387964" elapsed="0.011800">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.399967" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.387803" elapsed="0.012291">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.400278" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.387643" elapsed="0.012723">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.400525" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.387437" elapsed="0.013164">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.400749" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.387267" elapsed="0.013551">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.400962" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.387105" elapsed="0.013928">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.401178" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.386940" elapsed="0.014309">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.401395" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.386784" elapsed="0.014677">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.401659" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.386622" elapsed="0.015106">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.401874" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.386467" elapsed="0.015471">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.402076" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.386287" elapsed="0.015855">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.402311" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.386017" elapsed="0.016371">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.402587" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.385725" elapsed="0.016982">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.402878" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.385485" elapsed="0.017461">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.403088" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.385213" elapsed="0.017942">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.403290" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.385027" elapsed="0.018326">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.403487" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.384839" elapsed="0.018711">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.403671" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.384647" elapsed="0.019131">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.403902" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.384444" elapsed="0.019517">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.404083" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.384258" elapsed="0.019883">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.404266" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.384050" elapsed="0.020276">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.404447" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.383853" elapsed="0.020726">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.404711" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.383630" elapsed="0.021146">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.404898" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.383266" elapsed="0.021696">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.405095" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.383029" elapsed="0.022143">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.405326" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.382764" elapsed="0.022631">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.405575" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.382375" elapsed="0.023297">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.405874" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.382067" elapsed="0.023942">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.406183" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.381891" elapsed="0.024354">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.406372" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.381704" elapsed="0.024768">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.406648" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.381431" elapsed="0.025319">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.406900" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.381252" elapsed="0.025726">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.407110" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.381071" elapsed="0.026116">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.407317" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.380894" elapsed="0.026491">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.407509" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.380711" elapsed="0.026867">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.407700" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.380529" elapsed="0.027245">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.407891" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.380301" elapsed="0.027658">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.408076" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.380113" elapsed="0.028087">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.408325" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.379938" elapsed="0.028449">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.408504" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.379744" elapsed="0.028834">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.409027" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.379398" elapsed="0.029698">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.409275" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.379154" elapsed="0.030253">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.409564" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.378941" elapsed="0.030682">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.409744" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.378760" elapsed="0.031046">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.409912" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.378576" elapsed="0.031395">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.410080" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.378389" elapsed="0.031748">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.410250" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.378205" elapsed="0.032105">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.410458" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.377973" elapsed="0.032546">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.410725" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.377785" elapsed="0.033014">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.410919" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.377605" elapsed="0.033381">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.411099" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.377418" elapsed="0.033740">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.411269" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.377239" elapsed="0.034097">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.411441" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.377054" elapsed="0.034455">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.411604" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.376872" elapsed="0.034791">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.411780" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.376627" elapsed="0.035224">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.411991" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.376243" elapsed="0.035854">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.412273" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.375927" elapsed="0.036416">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.412571" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.375739" elapsed="0.036888">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.412723" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.375463" elapsed="0.037312">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.412871" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.375257" elapsed="0.037669">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.413025" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.375035" elapsed="0.038046">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.413179" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.374797" elapsed="0.038440">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.413339" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.374593" elapsed="0.038798">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.413485" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.374375" elapsed="0.039165">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.413631" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.374169" elapsed="0.039517">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.413778" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.373954" elapsed="0.039876">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.413925" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.373725" elapsed="0.040292">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.414111" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.373514" elapsed="0.040649">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.414267" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.373243" elapsed="0.041078">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.414441" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.372535" elapsed="0.041999">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.414735" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.372199" elapsed="0.042613">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.414919" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.371953" elapsed="0.043017">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.415057" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.371712" elapsed="0.043401">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.415199" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.371443" elapsed="0.043812">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.415341" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${resultado}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.371155" elapsed="0.044239">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.415549" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<var>${data_valida}</var>
+<status status="FAIL" start="2025-01-30T19:46:33.370790" elapsed="0.044819">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<msg time="2025-01-30T19:46:33.415711" level="FAIL">Maximum limit of started keywords and control structures exceeded.</msg>
+<status status="FAIL" start="2025-01-30T19:46:33.070413" elapsed="0.345402">Maximum limit of started keywords and control structures exceeded.</status>
+</kw>
+<tag>cliente</tag>
+<tag>principal</tag>
+<status status="FAIL" start="2025-01-30T19:46:26.581259" elapsed="6.835420">Maximum limit of started keywords and control structures exceeded.</status>
+</test>
+<status status="FAIL" start="2025-01-30T19:46:26.460682" elapsed="6.962114"/>
+</suite>
+<status status="FAIL" start="2025-01-30T19:46:26.459796" elapsed="6.966414"/>
+</suite>
+<status status="FAIL" start="2025-01-30T19:46:26.458912" elapsed="6.967810"/>
+</suite>
+<status status="FAIL" start="2025-01-30T19:46:26.458095" elapsed="6.969488"/>
+</suite>
+<status status="FAIL" start="2025-01-30T19:46:26.448243" elapsed="6.979912"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">cliente</stat>
+<stat pass="0" fail="1" skip="0">principal</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Asteca">Asteca</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Automacao">Asteca.Automacao</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="PGFN">Asteca.Automacao.PGFN</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Tests">Asteca.Automacao.PGFN.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1-s1" name="PGFN 20290751000369">Asteca.Automacao.PGFN.Tests.PGFN 20290751000369</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-01-30T19:46:26.578115" level="ERROR">Error in file '/Users/rafaellacavalcante/Asteca/Automacao/PGFN/resources/keywords/PGFN_20290751000369_keywords.resource' on line 6: Error in file '/Users/rafaellacavalcante/Asteca/Automacao/PGFN/tests/PGFN_20290751000369.robot' on line 4: Resource file with 'Test Cases' section is invalid.</msg>
+<msg time="2025-01-30T19:46:26.580580" level="ERROR">Error in file '/Users/rafaellacavalcante/Asteca/Automacao/PGFN/resources/variables/PGFN_20290751000369_variables.robot' on line 28: Setting variable '${Parcelamento}' failed: Resolving variable '${obter_parcelamento(00075112000101)}' failed: Variable '${obter_parcelamento}' not found.</msg>
+</errors>
+</robot>

@@ -1,0 +1,77 @@
+Importação de bibliotecas e APIs
+
+Iniciar importando o arquivo (Por enquanto trabalhar com arquivo local)
+    Validação se o arquivo existe ou não:
+        Se não existir, exibir uma mensagem de ERRO informando que o arquivo não existe.
+        Se existir, armazenar na variável e seguir o código.
+
+
+Iniciar a varredura do documento procurando informações e armazenando
+    Dados relevantes:
+    - Data de emissão do relatório
+    - Dados cadastrais
+        - Identificador
+            Validação CNPJ ou CPF
+        - UA de Domicílio
+        - Código da UA
+        - Endereço
+        - Bairro
+        - CEP
+        - Município
+        - UF
+        - Responsável
+        - Situação
+        - Natureza Jurídica
+        - Data de abertura
+        - CNAE
+        - Porte da empresa
+
+Inclusão e Exclusão pelo Simples Nacional
+
+Certidão Emitida
+    Tipo
+    Código certidão
+
+Emissão: dd/mm/aaaa
+Data de Validade: dd/mm/aaaa
+
+Diagnóstico Fiscal na Receita Federal
+    Situações e suas listas
+        Lista de Receitas
+        Lista de PA/Exerc
+        Lista de Dt. Vcmto
+        Lista de Vl. Originais
+        Lista de Sdo. Devedor
+        Lista de Multas
+        Lista de Juros
+        Lista de Sds. Dev. Cons.
+        Lista de Situações
+
+ Validação do comprimento de todas essas listas
+    Caso haja divergencia de tamanhos, printar uma mensagem de alerta e seguir o código
+
+Tipo de Parcelamento:
+    Dicionario de Códigos : Valor Suspenso
+    Simplificado?
+
+
+Diagnóstico Fiscal na Procuradoria-Geral da Fazenda Nacional
+    Validação se há uma situação
+        Caso não haja uma situação, printar a mensagem:
+            "Não foram detectadas pendências/exigibilidades suspensas para esse contribuinte nos controles da Procuradoria-Geral da Fazenda Nacional"
+        Caso haja:
+            Pendêcia: Tipo
+               Lista de Inscrições
+               Lista de Receitas
+               Lista de Datas de Inscrição
+               Azuizado em
+               Lista de Processos
+               Tipo de Devedor
+               Situações
+
+Tipo de Parcelamento:
+    Dicionario de Contas : Descritivo
+
+
+
+

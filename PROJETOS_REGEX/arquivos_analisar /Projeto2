@@ -1,0 +1,3 @@
+1- Acesso a pasta que contém os PDFs alvos
+2- Leitura de cada documento .pdf
+3- Busca em cada documento, palavras chave e armazenamento dessas informações em um df ou csv
