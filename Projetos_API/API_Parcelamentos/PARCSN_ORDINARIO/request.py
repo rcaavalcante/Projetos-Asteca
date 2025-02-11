@@ -2,14 +2,16 @@ import os
 import base64
 import json
 import requests
+from datetime import datetime
 import xml.etree.ElementTree as eT
 from time import sleep
-from constants import URL_REQUEST, URL_TRANSMIT, URL_SUPPORT, API_SECRETS, ACCOUNTANT_CODE, CNPJS_LIST, read_keys
+from constants_parc_ordinario import URL_REQUEST, URL_TRANSMIT, URL_SUPPORT, API_SECRETS, ACCOUNTANT_CODE, CNPJS_LIST, read_keys
 
 
 cnpjs_com_erro = []
 
-def generate_data(modulo, caminho, client_code):
+def generate_data(modulo, caminho, idservico, client_code):
+    periodo = datetime.now().strftime('%Y%m')
     read_keys()
     header = {
         "Authorization": f"Bearer {API_SECRETS.get('accessToken')}",
@@ -33,6 +35,7 @@ def generate_data(modulo, caminho, client_code):
     url = ''
 
     if modulo == 'sit_fiscal':
+        caminho_arquivo = f'{caminho}.pdf'
         data["pedidoDados"] = {
             "idSistema": "SITFIS",
             "idServico": "SOLICITARPROTOCOLO92",
@@ -81,40 +84,93 @@ def generate_data(modulo, caminho, client_code):
         url = URL_REQUEST
 
 
-    elif modulo == 'PARCSN':
-    #     data["pedidoDados"] = {
-    #         "idSistema": "PARCSN",
-    #         "idServico": "GERARDAS161",
-    #         "versaoSistema": "1.0",
-    #         "dados": '{{ "parcelaParaEmitir": {} }}'.format(periodo)
-    #    }
+    elif modulo == 'PARCSN':    
+            
+        if idservico == "GERARDAS161":
+            # Emitir documento de arrecadação
+            caminho_arquivo = f'{caminho}.pdf'
+            data["pedidoDados"] = {
+                "idSistema": "PARCSN",
+                "idServico": "GERARDAS161",
+                "versaoSistema": "1.0",    
+                "dados": '{{ "parcelaParaEmitir": "{}" }}'.format(periodo)
+        }    
+           
+            url = URL_TRANSMIT
         
+
+        elif idservico == "PARCELASPARAGERAR162":
+            # Consultar parcelas disponíveis para impressão (geração do DAS)
+            caminho_arquivo = f'{caminho}.json'
+            data["pedidoDados"] = {
+                "idSistema": "PARCSN",
+                "idServico": "PARCELASPARAGERAR162",
+                "versaoSistema": "1.0",    
+                "dados": ""
+        }
+            
+            url = URL_REQUEST
+
+        elif idservico == "PEDIDOSPARC163":
+            # Consultar parcelas disponíveis para impressão (geração do DAS)
+            caminho_arquivo = f'{caminho}.json'
+            data["pedidoDados"] = {
+                "idSistema": "PARCSN",
+                "idServico": "PEDIDOSPARC163",
+                "versaoSistema": "1.0",    
+                "dados": ""
+        }
+            
+            url = URL_REQUEST
+
+
+        elif idservico == "OBTERPARC164":
+            # Consultar um parcelamento específico.
+            caminho_arquivo = f'{caminho}.json'
+            data["pedidoDados"] = {
+                "idSistema": "PARCSN",
+                "idServico": "OBTERPARC164",
+                "versaoSistema": "1.0",    
+                "dados": "{ \"numeroParcelamento\": 1}"
+        }
+
+            url = URL_REQUEST
+
+
+        elif idservico == "DETPAGTOPARC165":
+            # Consultar detalhe de pagamento de DAS de parcelamento ordinário
+            caminho_arquivo = f'{caminho}.json'
+            data["pedidoDados"] = {
+                "idSistema": "PARCSN",
+                "idServico": "DETPAGTOPARC165",
+                "versaoSistema": "1.0",    
+                "dados": '{{ \"numeroParcelamento\": 1, \"anoMesParcela\": {} }}'.format(periodo)
+        }
+
+            url = URL_REQUEST
+
+
+    elif modulo == 'PGMEI':
         data["pedidoDados"] = {
-            "idSistema": "PARCSN",
-            "idServico": "OBTERPARC164",
-            "versaoSistema": "1.0",    
-            "dados": "{ \"numeroParcelamento\": 1}"
+            "idSistema": "PGMEI",
+            "idServico": "GERARDASPDF21",
+            "versaoSistema": "1.0",
+            "dados": '{{ "periodoApuracao": {} }}'.format(periodo)
        }
-
-        url = URL_REQUEST
-
-    # elif modulo == 'PGMEI':
-    #     data["pedidoDados"] = {
-    #         "idSistema": "PGMEI",
-    #         "idServico": "GERARDASPDF21",
-    #         "versaoSistema": "1.0",
-    #         "dados": '{{ "periodoApuracao": {} }}'.format(periodo)
-    #    }
         
-        #url = URL_TRANSMIT
+        url = URL_TRANSMIT
 
     res = requests.post(url, data=json.dumps(data), headers=header)
     print(f'Status code da requisição {modulo}: {res.status_code}')
     print(f"Resposta a requisição {modulo}:", res.json())
+    arquivo_json = res.json()
+
+    print(f'Arquivo gerado: {caminho_arquivo}')
     print('---------------------------------------')
 
     if res.status_code == 200:
-        if '.xml' in caminho:
+
+        if '.xml' in caminho_arquivo:
             documentos = json.loads(json.loads(res.content.decode('utf-8')).get('dados'))
 
             # elemento root
@@ -211,9 +267,17 @@ def generate_data(modulo, caminho, client_code):
                     desmembramento_cib.text = str(desmembramento["cib"])
 
             tree = eT.ElementTree(principal)
-            tree.write(caminho, encoding="utf-8", xml_declaration=True)
+            tree.write(caminho_arquivo, encoding="utf-8", xml_declaration=True)
             return True
         
+        elif '.json' in caminho_arquivo:
+            dados = json.loads(arquivo_json['dados'])
+            with open(caminho_arquivo, "w") as f:
+                json.dump(dados, f, indent=4)
+
+            print(f"Arquivo {caminho_arquivo} foi criado com sucesso!")
+
+
         else:
             try:
                 pdf = json.loads(res.json().get('dados')).get("declaracao").get("pdf")
@@ -221,16 +285,16 @@ def generate_data(modulo, caminho, client_code):
                 pdf = json.loads(res.json().get('dados')).get('pdf')
 
 
-            diretorio = os.path.dirname(caminho)
+            diretorio = os.path.dirname(caminho_arquivo)
             # Se o diretório não existir, crie-o
             if not os.path.exists(diretorio):
                 os.makedirs(diretorio)
 
-            if not os.path.isfile(caminho):
-                open(caminho, 'w').close()
+            if not os.path.isfile(caminho_arquivo):
+                open(caminho_arquivo, 'w').close()
             
             try:
-                with open(caminho, "wb") as f:
+                with open(caminho_arquivo, "wb") as f:
                     f.write(base64.b64decode(pdf))
                     print(f'Decodificação relatório {client_code} feita com sucesso')
                 return True
