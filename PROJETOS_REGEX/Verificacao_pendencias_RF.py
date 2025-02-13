@@ -104,7 +104,7 @@ def processar_arquivos(diretorio):
     else:
         print(f"Não foram encontrados arquivos com Parcelamentos SISPAR ativos na PGFN.")
 
-    #return arquivos_parcelamento_rf
+    return arquivos_parcelamento_rf
 
 
 
@@ -145,5 +145,7 @@ def mover_arquivos_para_pasta(arquivos, pasta_origem, pasta_destino):
 
 # Conferindo a lista de arquivos 
 if __name__ == "__main__":
-    processar_arquivos(diretorio_main)
-    #arquivos_alvo = processar_arquivos(diretorio_main)
+    arquivos = processar_arquivos(diretorio_main)
+    origem = diretorio_main
+    destino = f"{diretorio_main}/pendecias_rf"
+    mover_arquivos_para_pasta(arquivos, origem, destino)
