@@ -92,17 +92,18 @@ def processar_arquivos(diretorio):
             except:
                 print(f"Erro na leitura do arquivo: {arquivo}")
 
-           
+    '''      
     if arquivos_parcelamento_rf:
         print("\n", diretorio, "\n")
         print(f"{arquivos_processados} arquivos processados")
-        print(f"\n{len(arquivos_parcelamento_rf)} Arquivos com parcelamentos ativos na PGFN: ")
-        for arquivo in arquivos_parcelamento_rf:
+        arquivos_parcelamento_rf_ordenados = sorted(arquivos_parcelamento_rf)
+        print(f"\n{len(arquivos_parcelamento_rf)} Arquivos com parcelamentos ativos na RF: ")
+        for arquivo in arquivos_parcelamento_rf_ordenados:
             print(f"- {arquivo}")
 
 
     else:
-        print(f"Não foram encontrados arquivos com Parcelamentos SISPAR ativos na PGFN.")
+        print(f"Não foram encontrados arquivos com Parcelamentos SISPAR ativos na PGFN.")'''
 
     return arquivos_parcelamento_rf
 

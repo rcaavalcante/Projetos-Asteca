@@ -152,7 +152,18 @@ def generate_data(modulo, caminho, idservico, client_code):
 
     elif modulo == 'PERTSN':
 
-        if idservico == "OBTERPARC184":
+        if idservico == "GERARDAS181":
+            caminho_arquivo = f'{caminho}.pdf'
+            data["pedidoDados"] = {
+                "idSistema": "PERTSN",
+                "idServico": "GERARDAS181",
+                "versaoSistema": "1.0",
+                "dados": '{{ "parcelaParaEmitir": "{}" }}'.format(periodo)
+        }
+            
+            url = URL_TRANSMIT
+
+        elif idservico == "OBTERPARC184":
             caminho_arquivo = f'{caminho}.json'
             data["pedidoDados"] = {
                 "idSistema": "PERTSN",
@@ -188,6 +199,20 @@ def generate_data(modulo, caminho, idservico, client_code):
             
             url = URL_REQUEST
     
+
+    elif modulo == 'RELPSN':
+
+        if idservico == "GERARDAS191":
+            caminho_arquivo = f'{caminho}.pdf'
+            data["pedidoDados"] = {
+                "idSistema": "RELPSN",
+                "idServico": "GERARDAS191",
+                "versaoSistema": "1.0",
+                "dados": '{{ "parcelaParaEmitir": "{}" }}'.format(periodo)
+        }
+            
+            url = URL_TRANSMIT
+
 
     elif modulo == 'PGMEI':
         data["pedidoDados"] = {

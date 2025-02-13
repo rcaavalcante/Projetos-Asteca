@@ -25,9 +25,8 @@ API_SECRETS = json.loads(secrets)
 ACCOUNTANT_CODE = '33262015000187'
 WARRANT_CODE = ''
 #CLIENT_CODE = '33262015000187'
-CNPJS_LIST = [ 
-            #'05605725000127',
-            '04956309000100'
+CNPJS_LIST = [          
+            '10556232000184'
             ]
 
 

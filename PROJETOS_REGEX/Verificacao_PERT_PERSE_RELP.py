@@ -3,22 +3,29 @@ import os
 from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
 import re
 import shutil
+from Verificacao_pendencias_RF import processar_arquivos
 
 
-def processar_arquivos(diretorio):
+def verificacao_parc_rf():
 
-    #arquivos_parcelamento_sispar_pgfn = []
-    #arquivos_parcelamento_sispar_pgfn_simples = []
-    arquivos_parcelamento_geral = []
+    lista_arquivos = processar_arquivos(diretorio_main)
+    #print(len(lista_arquivos))
+    # for i in sorted(lista_arquivos):
+    #     print(i)  
     arquivos_processados = 0
-    parc_receita = ["PERT", "PERSE", "RELP"]
+    parc_receita = ["PERT", "PERSE", "RELP", "SIMPLES NACIONAL - EM PARCELAMENTO"]
+    arquivos_PARCSN = []
+    arquivos_PERTSN = []
+    arquivos_RELPSN = []
+    arquivos_PERSESN = []
+    contador = 0
 
 
-    for arquivo in os.listdir(diretorio):
+    for arquivo in lista_arquivos:
         tem_parc_receita = False
         if arquivo.endswith('.pdf'):  # Verifica se o arquivo é um PDF
             arquivos_processados += 1
-            caminho_pdf = os.path.join(diretorio, arquivo)
+            caminho_pdf = os.path.join(diretorio_main, arquivo)
                 
             # Pegando CNPJ do cliente
             partes = arquivo.split('_')
@@ -72,52 +79,88 @@ def processar_arquivos(diretorio):
                     #print(texto_pagina)
                     
 
-                    if "PGFN" in pendencias:
-                        #parcelamento_encontrado = False
+                    if "Receita Federal" in pendencias:
 
-                        for texto in referencia_parcelamentos:
-                            
-                            if texto in texto_pagina:
-                                if referencia_parcelamentos[0] in texto_pagina:
-                                    #print(f"{referencia_parcelamentos[0]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
-                                    #parcelamento_encontrado = True
-                                    #arquivos_parcelamento_sispar_pgfn_simples.append(arquivo)
-                                    arquivos_parcelamento_geral.append(arquivo)
-                                    break
-
-                                if referencia_parcelamentos[1] in texto_pagina:
-                                    #print(f"{referencia_parcelamentos[1]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
-                                    #arquivos_parcelamento_sispar_pgfn.append(arquivo)
-                                    #parcelamento_encontrado = True
-                                    if arquivo not in arquivos_parcelamento_geral:
-                                        arquivos_parcelamento_geral.append(arquivo) 
-
-                    elif "Receita Federal" in pendencias:
-
+                        parcelamentos_identificados = [] 
+                        
                         for parc in parc_receita:
                             if parc in texto_pagina:
                                 tem_parc_receita = True
-                            
-                                if parc_receita[0] in texto_pagina:
-                                    print(f"{parc_receita[0]} está no SITFIS do cliente: {cnpj_cliente}")
+                                parcelamentos_identificados.append(parc)
 
-                                if parc_receita[1] in texto_pagina:
-                                    print(f"{parc_receita[1]} está no SITFIS do cliente: {cnpj_cliente}")
+                        for parc in parcelamentos_identificados:
+                            if parc == "PERT":
+                                arquivos_PERTSN.append(arquivo)
+                                #print(f"{parc_receita[0]} está no SITFIS do cliente: {cnpj_cliente}")
 
-                                if parc_receita[2] in texto_pagina:
-                                    print(f"{parc_receita[2]} está no SITFIS do cliente: {cnpj_cliente}")
+                            elif parc == "PERSE":
+                                arquivos_PERSESN.append(arquivo)
+                                #print(f"{parc_receita[1]} está no SITFIS do cliente: {cnpj_cliente}")
 
-                    if tem_parc_receita:
-                        pass
-                        #print(f"O cliente {cnpj_cliente} tem parcelamentos PERT, PERSE ou RELP")
+                            elif parc == "RELP":
+                                arquivos_RELPSN.append(arquivo)
+                                #print(f"{parc_receita[2]} está no SITFIS do cliente: {cnpj_cliente}")
+                                
+                            elif parc == "SIMPLES NACIONAL - EM PARCELAMENTO":
+                                arquivos_PARCSN.append(arquivo)
+                                #print(f"PARCSN está no SITFIS do cliente: {cnpj_cliente}")
+                                
                     
 
             except:
                 print(f"Erro na leitura do arquivo: {arquivo}")
 
+    
+    if tem_parc_receita:
+         #pass
+        if arquivos_RELPSN:
+            print(f"{len(arquivos_RELPSN)} arquivos com RELPSN:")
+            for i in sorted(arquivos_RELPSN):
+                print(i)
+        else:
+            print("**** Não há arquivos com parcelamento do tipo RELPSN ****")
+
+        if arquivos_PERSESN:
+            print(f"{len(arquivos_PERSESN)} arquivos com PERSESN:")
+            for i in sorted(arquivos_PERSESN):
+                print(i)
+        else:
+            print("**** Não há arquivos com parcelamento do tipo PERSESN ****")
+
+        if arquivos_PERTSN:
+            print(f"{len(arquivos_PERTSN)} arquivos com PERTSN:")
+            for i in sorted(arquivos_PERTSN):
+                print(i)
+        else:
+            print("**** Não há arquivos com parcelamento do tipo PERTSN ****")
+
+        if arquivos_PARCSN:
+            print(f"{len(arquivos_PARCSN)} arquivos com PARCSN:")
+            for i in sorted(arquivos_PARCSN):
+                print(i)
+                                
+        else:
+            print("**** Não há arquivos com parcelamento do tipo PARCSN ****")
+                    
+       
+                       
+
+
+
+
+
+
+
+    '''
+    print(f"{arquivos_processados} arquivos processados")
+    print(f"{len(somente_PARCSN)} arquivos que possuem somente PARCSN: ")
+    for i in sorted(somente_PARCSN):
+        print(i)'''
+
 
 # Conferindo a lista de arquivos 
 if __name__ == "__main__":
-    processar_arquivos(diretorio_main)
+    verificacao_parc_rf()
+    
     
 
