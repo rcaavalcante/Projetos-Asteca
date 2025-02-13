@@ -1,6 +1,6 @@
 import PyPDF2
 import os
-from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
+from constantes import diretorio_main, referencia_pendencias, referencia_parcelamentos_rf, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
 import re
 import shutil
 
@@ -9,7 +9,7 @@ def processar_arquivos(diretorio):
 
     #arquivos_parcelamento_sispar_pgfn = []
     #arquivos_parcelamento_sispar_pgfn_simples = []
-    arquivos_parcelamento_geral = []
+    arquivos_parcelamento_rf = []
     arquivos_processados = 0
 
     for arquivo in os.listdir(diretorio):
@@ -69,42 +69,42 @@ def processar_arquivos(diretorio):
                     #print(texto_pagina)
                     
 
-                    if "PGFN" in pendencias:
+                    if "Receita Federal" in pendencias:
                         #parcelamento_encontrado = False
 
-                        for texto in referencia_parcelamentos:
+                        for texto in referencia_parcelamentos_rf:
                             
                             if texto in texto_pagina:
-                                if referencia_parcelamentos[0] in texto_pagina:
-                                    #print(f"{referencia_parcelamentos[0]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
+                                if referencia_parcelamentos_rf[0] in texto_pagina:
+                                    #print(f"{referencia_parcelamentos_rf[0]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
                                     #parcelamento_encontrado = True
                                     #arquivos_parcelamento_sispar_pgfn_simples.append(arquivo)
-                                    arquivos_parcelamento_geral.append(arquivo)
+                                    arquivos_parcelamento_rf.append(arquivo)
                                     break
 
-                                if referencia_parcelamentos[1] in texto_pagina:
-                                    #print(f"{referencia_parcelamentos[1]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
+                                if referencia_parcelamentos_rf[1] in texto_pagina:
+                                    #print(f"{referencia_parcelamentos_rf[1]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
                                     #arquivos_parcelamento_sispar_pgfn.append(arquivo)
                                     #parcelamento_encontrado = True
-                                    if arquivo not in arquivos_parcelamento_geral:
-                                        arquivos_parcelamento_geral.append(arquivo) 
+                                    if arquivo not in arquivos_parcelamento_rf:
+                                        arquivos_parcelamento_rf.append(arquivo) 
 
             except:
                 print(f"Erro na leitura do arquivo: {arquivo}")
 
-    '''       
-    if arquivos_parcelamento_geral:
+           
+    if arquivos_parcelamento_rf:
         print("\n", diretorio, "\n")
         print(f"{arquivos_processados} arquivos processados")
-        print(f"\n{len(arquivos_parcelamento_geral)} Arquivos com parcelamentos ativos na PGFN: ")
-        for arquivo in arquivos_parcelamento_geral:
+        print(f"\n{len(arquivos_parcelamento_rf)} Arquivos com parcelamentos ativos na PGFN: ")
+        for arquivo in arquivos_parcelamento_rf:
             print(f"- {arquivo}")
 
 
     else:
-        print(f"Não foram encontrados arquivos com Parcelamentos SISPAR ativos na PGFN.")'''
+        print(f"Não foram encontrados arquivos com Parcelamentos SISPAR ativos na PGFN.")
 
-    return arquivos_parcelamento_geral
+    #return arquivos_parcelamento_rf
 
 
 
@@ -146,12 +146,4 @@ def mover_arquivos_para_pasta(arquivos, pasta_origem, pasta_destino):
 # Conferindo a lista de arquivos 
 if __name__ == "__main__":
     processar_arquivos(diretorio_main)
-    arquivos_alvo = processar_arquivos(diretorio_main)
-    pasta_origem = os.path.join(diretorio_main)
-    pasta_destino = diretorio_sispar_pgfn
-    mover_arquivos_para_pasta(arquivos_alvo, pasta_origem, pasta_destino)
-
-
-# Bloco principal para execução direta do script
-# if __name__ == "__main__":
-#     processar_arquivos(diretorio_main)
+    #arquivos_alvo = processar_arquivos(diretorio_main)

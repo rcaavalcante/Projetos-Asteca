@@ -1,5 +1,5 @@
 import os
-from Verificacao_pendencias import processar_arquivos, arquivos_parcelamento_geral, diretorio_sispar_pgfn
+from PROJETOS_REGEX.Verificacao_pendencias_PGFN import processar_arquivos, arquivos_parcelamento_pgfn, diretorio_sispar_pgfn
 from contextlib import redirect_stdout
 import shutil
 from constantes import diretorio_main, diretorio_teste, diretorio_sispar_pgfn, diretorio_pgfn
@@ -44,4 +44,4 @@ def mover_arquivos_para_pasta(arquivos, pasta_origem, pasta_destino):
 if __name__ == "__main__":
     pasta_origem = os.path.join(diretorio_main)
     pasta_destino = diretorio_sispar_pgfn
-    mover_arquivos_para_pasta(arquivos_parcelamento_geral, pasta_origem, pasta_destino)
+    mover_arquivos_para_pasta(arquivos_parcelamento_pgfn, pasta_origem, pasta_destino)

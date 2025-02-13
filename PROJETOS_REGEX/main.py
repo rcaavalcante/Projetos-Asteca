@@ -3,7 +3,7 @@ import os
 import shutil
 import re
 import os
-from Verificacao_pendencias import  arquivos_parcelamento_sispar_pgfn, processar_arquivos, arquivos_parcelamento_geral, diretorio_gen1
+from PROJETOS_REGEX.Verificacao_pendencias_PGFN import  arquivos_parcelamento_sispar_pgfn, processar_arquivos, arquivos_parcelamento_geral, diretorio_gen1
 from contextlib import redirect_stdout
 from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
 from Arquivos_SISPAR_PGFN import mover_arquivos_para_pasta

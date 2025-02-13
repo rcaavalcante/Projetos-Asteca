@@ -1,7 +1,7 @@
 
 
 
-diretorio_main = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Integra_Contador/Files/Arquivos_gerados/arquivos_gerados_04Fev'
+diretorio_main = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Integra_Contador/Files/Arquivos_gerados'
 diretorio_teste = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Integra_Contador/Files/Arquivos_teste/'
 diretorio_sispar_pgfn = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Integra_Contador/Files/Arquivos_gerados/SISPAR_PGFN'
 diretorio_pgfn = '/Users/rafaellacavalcante/Asteca/PROJETOS_REGEX/PENDENCIA_PGFN'
@@ -21,3 +21,7 @@ referencia_parcelamentos = [
     "Parcelamento com Exigibilidade Suspensa (SISPAR)"
 ]
 
+referencia_parcelamentos_rf = [
+    "Parcelamento com Exigibilidade Suspensa (PARCSN/PARCMEI)",
+    "Pendência - Parcelamento (PARCSN/PARCMEI)"
+]
