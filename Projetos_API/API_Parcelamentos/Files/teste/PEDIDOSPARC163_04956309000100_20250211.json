@@ -1,0 +1,22 @@
+{
+    "parcelamentos": [
+        {
+            "numero": 1,
+            "dataDoPedido": 20180117,
+            "situacao": "Encerrado a Pedido do Contribuinte",
+            "dataDaSituacao": 20180620
+        },
+        {
+            "numero": 2,
+            "dataDoPedido": 20221214,
+            "situacao": "Encerrado a Pedido do Contribuinte",
+            "dataDaSituacao": 20240807
+        },
+        {
+            "numero": 3,
+            "dataDoPedido": 20250127,
+            "situacao": "Em parcelamento",
+            "dataDaSituacao": 20250129
+        }
+    ]
+}

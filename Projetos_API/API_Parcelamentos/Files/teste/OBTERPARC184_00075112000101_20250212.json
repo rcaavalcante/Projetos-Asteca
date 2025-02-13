@@ -1,0 +1,1014 @@
+{
+    "numero": 9101,
+    "dataDoPedido": 20180625,
+    "situacao": "Em parcelamento",
+    "dataDaSituacao": 20181106,
+    "consolidacaoOriginal": {
+        "valorTotalConsolidadoDaEntrada": 54808.2,
+        "parcelasRemanescentes": 5,
+        "parcelaBasicaDaEntrada": 10961.64,
+        "dataConsolidacao": 20180625141335,
+        "valorConsolidadoDaDivida": 1096164.05,
+        "detalhesConsolidacao": [
+            {
+                "periodoApuracao": 201410,
+                "vencimento": 20141120,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 18087.98,
+                "valorAtualizado": 28913.57
+            },
+            {
+                "periodoApuracao": 201411,
+                "vencimento": 20141222,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 15703.5,
+                "valorAtualizado": 24951.24
+            },
+            {
+                "periodoApuracao": 201412,
+                "vencimento": 20150120,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 9656.28,
+                "valorAtualizado": 15252.03
+            },
+            {
+                "periodoApuracao": 201501,
+                "vencimento": 20150220,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 24971.01,
+                "valorAtualizado": 39236.88
+            },
+            {
+                "periodoApuracao": 201502,
+                "vencimento": 20150320,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 13482.74,
+                "valorAtualizado": 21045.14
+            },
+            {
+                "periodoApuracao": 201503,
+                "vencimento": 20150420,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 19390.53,
+                "valorAtualizado": 30082.39
+            },
+            {
+                "periodoApuracao": 201504,
+                "vencimento": 20150520,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 28472.49,
+                "valorAtualizado": 43890.3
+            },
+            {
+                "periodoApuracao": 201505,
+                "vencimento": 20150622,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 18454.67,
+                "valorAtualizado": 28250.34
+            },
+            {
+                "periodoApuracao": 201506,
+                "vencimento": 20150720,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 33237.52,
+                "valorAtualizado": 50487.73
+            },
+            {
+                "periodoApuracao": 201507,
+                "vencimento": 20150820,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 23901.67,
+                "valorAtualizado": 36041.26
+            },
+            {
+                "periodoApuracao": 201508,
+                "vencimento": 20150921,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 19327.81,
+                "valorAtualizado": 28929.82
+            },
+            {
+                "periodoApuracao": 201509,
+                "vencimento": 20151020,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 19658.42,
+                "valorAtualizado": 29206.46
+            },
+            {
+                "periodoApuracao": 201510,
+                "vencimento": 20151120,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 22420.98,
+                "valorAtualizado": 33073.11
+            },
+            {
+                "periodoApuracao": 201511,
+                "vencimento": 20151221,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 16571.96,
+                "valorAtualizado": 24253.0
+            },
+            {
+                "periodoApuracao": 201512,
+                "vencimento": 20160120,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 11426.51,
+                "valorAtualizado": 16601.5
+            },
+            {
+                "periodoApuracao": 201601,
+                "vencimento": 20160222,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 21962.36,
+                "valorAtualizado": 31689.43
+            },
+            {
+                "periodoApuracao": 201602,
+                "vencimento": 20160321,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 21379.77,
+                "valorAtualizado": 30600.8
+            },
+            {
+                "periodoApuracao": 201603,
+                "vencimento": 20160420,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 25877.33,
+                "valorAtualizado": 36763.83
+            },
+            {
+                "periodoApuracao": 201604,
+                "vencimento": 20160520,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 24992.13,
+                "valorAtualizado": 35228.85
+            },
+            {
+                "periodoApuracao": 201605,
+                "vencimento": 20160620,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 32310.64,
+                "valorAtualizado": 45170.22
+            },
+            {
+                "periodoApuracao": 201606,
+                "vencimento": 20160720,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 27547.17,
+                "valorAtualizado": 38205.13
+            },
+            {
+                "periodoApuracao": 201607,
+                "vencimento": 20160822,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 18310.37,
+                "valorAtualizado": 25171.18
+            },
+            {
+                "periodoApuracao": 201608,
+                "vencimento": 20160920,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 20447.36,
+                "valorAtualizado": 27881.94
+            },
+            {
+                "periodoApuracao": 201609,
+                "vencimento": 20161020,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 19902.59,
+                "valorAtualizado": 26930.11
+            },
+            {
+                "periodoApuracao": 201610,
+                "vencimento": 20161121,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 22247.07,
+                "valorAtualizado": 29871.08
+            },
+            {
+                "periodoApuracao": 201611,
+                "vencimento": 20161220,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 21942.01,
+                "valorAtualizado": 29215.72
+            },
+            {
+                "periodoApuracao": 201612,
+                "vencimento": 20170120,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 10234.39,
+                "valorAtualizado": 13515.48
+            },
+            {
+                "periodoApuracao": 201701,
+                "vencimento": 20170220,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 17434.21,
+                "valorAtualizado": 22871.87
+            },
+            {
+                "periodoApuracao": 201702,
+                "vencimento": 20170320,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 17110.38,
+                "valorAtualizado": 22267.38
+            },
+            {
+                "periodoApuracao": 201703,
+                "vencimento": 20170420,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 27661.11,
+                "valorAtualizado": 35779.57
+            },
+            {
+                "periodoApuracao": 201704,
+                "vencimento": 20170522,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 13849.65,
+                "valorAtualizado": 17785.65
+            },
+            {
+                "periodoApuracao": 201705,
+                "vencimento": 20170620,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 21444.83,
+                "valorAtualizado": 27365.69
+            },
+            {
+                "periodoApuracao": 201706,
+                "vencimento": 20170720,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 16694.5,
+                "valorAtualizado": 21170.24
+            },
+            {
+                "periodoApuracao": 201707,
+                "vencimento": 20170821,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 14145.69,
+                "valorAtualizado": 17824.92
+            },
+            {
+                "periodoApuracao": 201708,
+                "vencimento": 20170920,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 13674.99,
+                "valorAtualizado": 17144.29
+            },
+            {
+                "periodoApuracao": 201709,
+                "vencimento": 20171020,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 31057.73,
+                "valorAtualizado": 38738.25
+            },
+            {
+                "periodoApuracao": 201710,
+                "vencimento": 20171120,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 19019.59,
+                "valorAtualizado": 23614.66
+            },
+            {
+                "periodoApuracao": 201711,
+                "vencimento": 20171220,
+                "numeroProcesso": "",
+                "saldoDevedorOriginal": 25192.57,
+                "valorAtualizado": 31142.99
+            }
+        ]
+    },
+    "alteracoesDivida": [
+        {
+            "totalConsolidado": 848467.72,
+            "parcelasRemanescentes": 145,
+            "parcelaBasica": 5851.5,
+            "dataAlteracaoDivida": 201811220938,
+            "valorConsolidadoPrincipal": 744546.28,
+            "detalhesAlteracaoDivida": [
+                {
+                    "periodoApuracao": 201412,
+                    "vencimento": 20150120,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 8791.53,
+                    "valorAtualizado": 10337.91
+                },
+                {
+                    "periodoApuracao": 201501,
+                    "vencimento": 20150220,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 24971.01,
+                    "valorAtualizado": 29320.93
+                },
+                {
+                    "periodoApuracao": 201502,
+                    "vencimento": 20150320,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 13482.74,
+                    "valorAtualizado": 15803.08
+                },
+                {
+                    "periodoApuracao": 201503,
+                    "vencimento": 20150420,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 19390.53,
+                    "valorAtualizado": 22690.79
+                },
+                {
+                    "periodoApuracao": 201504,
+                    "vencimento": 20150520,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 28472.49,
+                    "valorAtualizado": 33264.38
+                },
+                {
+                    "periodoApuracao": 201505,
+                    "vencimento": 20150622,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 18454.67,
+                    "valorAtualizado": 21519.96
+                },
+                {
+                    "periodoApuracao": 201506,
+                    "vencimento": 20150720,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 33237.52,
+                    "valorAtualizado": 38681.78
+                },
+                {
+                    "periodoApuracao": 201507,
+                    "vencimento": 20150820,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 23901.67,
+                    "valorAtualizado": 27761.76
+                },
+                {
+                    "periodoApuracao": 201508,
+                    "vencimento": 20150921,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 19327.81,
+                    "valorAtualizado": 22406.71
+                },
+                {
+                    "periodoApuracao": 201509,
+                    "vencimento": 20151020,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 19658.42,
+                    "valorAtualizado": 22746.73
+                },
+                {
+                    "periodoApuracao": 201510,
+                    "vencimento": 20151120,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 22420.98,
+                    "valorAtualizado": 25896.16
+                },
+                {
+                    "periodoApuracao": 201511,
+                    "vencimento": 20151221,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 16571.96,
+                    "valorAtualizado": 19102.46
+                },
+                {
+                    "periodoApuracao": 201512,
+                    "vencimento": 20160120,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 11426.51,
+                    "valorAtualizado": 13146.17
+                },
+                {
+                    "periodoApuracao": 201601,
+                    "vencimento": 20160222,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 21962.36,
+                    "valorAtualizado": 25223.75
+                },
+                {
+                    "periodoApuracao": 201602,
+                    "vencimento": 20160321,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 21379.77,
+                    "valorAtualizado": 24505.45
+                },
+                {
+                    "periodoApuracao": 201603,
+                    "vencimento": 20160420,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 25877.33,
+                    "valorAtualizado": 29606.22
+                },
+                {
+                    "periodoApuracao": 201604,
+                    "vencimento": 20160520,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 24992.13,
+                    "valorAtualizado": 28538.49
+                },
+                {
+                    "periodoApuracao": 201605,
+                    "vencimento": 20160620,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 32310.64,
+                    "valorAtualizado": 36821.17
+                },
+                {
+                    "periodoApuracao": 201606,
+                    "vencimento": 20160720,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 27547.17,
+                    "valorAtualizado": 31329.36
+                },
+                {
+                    "periodoApuracao": 201607,
+                    "vencimento": 20160822,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 18310.37,
+                    "valorAtualizado": 20780.4
+                },
+                {
+                    "periodoApuracao": 201608,
+                    "vencimento": 20160920,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 20447.36,
+                    "valorAtualizado": 23160.71
+                },
+                {
+                    "periodoApuracao": 201609,
+                    "vencimento": 20161020,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 19902.59,
+                    "valorAtualizado": 22501.83
+                },
+                {
+                    "periodoApuracao": 201610,
+                    "vencimento": 20161121,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 22247.07,
+                    "valorAtualizado": 25105.78
+                },
+                {
+                    "periodoApuracao": 201611,
+                    "vencimento": 20161220,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 21942.01,
+                    "valorAtualizado": 24713.27
+                },
+                {
+                    "periodoApuracao": 201612,
+                    "vencimento": 20170120,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 10234.39,
+                    "valorAtualizado": 11504.43
+                },
+                {
+                    "periodoApuracao": 201701,
+                    "vencimento": 20170220,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 17434.21,
+                    "valorAtualizado": 19566.4
+                },
+                {
+                    "periodoApuracao": 201702,
+                    "vencimento": 20170320,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 17110.38,
+                    "valorAtualizado": 19167.02
+                },
+                {
+                    "periodoApuracao": 201703,
+                    "vencimento": 20170420,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 27661.11,
+                    "valorAtualizado": 30944.45
+                },
+                {
+                    "periodoApuracao": 201704,
+                    "vencimento": 20170522,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 13849.65,
+                    "valorAtualizado": 15467.24
+                },
+                {
+                    "periodoApuracao": 201705,
+                    "vencimento": 20170620,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 21444.83,
+                    "valorAtualizado": 23915.23
+                },
+                {
+                    "periodoApuracao": 201706,
+                    "vencimento": 20170720,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 16694.5,
+                    "valorAtualizado": 18590.97
+                },
+                {
+                    "periodoApuracao": 201707,
+                    "vencimento": 20170821,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 14145.69,
+                    "valorAtualizado": 15729.98
+                },
+                {
+                    "periodoApuracao": 201708,
+                    "vencimento": 20170920,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 13674.99,
+                    "valorAtualizado": 15188.78
+                },
+                {
+                    "periodoApuracao": 201709,
+                    "vencimento": 20171020,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 31057.73,
+                    "valorAtualizado": 34455.41
+                },
+                {
+                    "periodoApuracao": 201710,
+                    "vencimento": 20171120,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 19019.59,
+                    "valorAtualizado": 21079.38
+                },
+                {
+                    "periodoApuracao": 201711,
+                    "vencimento": 20171220,
+                    "numeroProcesso": "",
+                    "saldoDevedorOriginal": 25192.57,
+                    "valorAtualizado": 27893.18
+                }
+            ]
+        }
+    ],
+    "demonstrativoPagamentos": [
+        {
+            "mesDaParcela": 201806,
+            "vencimentoDoDas": 20180629,
+            "dataDeArrecadacao": 20180628,
+            "valorPago": 10961.64
+        },
+        {
+            "mesDaParcela": 201807,
+            "vencimentoDoDas": 20180731,
+            "dataDeArrecadacao": 20180726,
+            "valorPago": 11071.25
+        },
+        {
+            "mesDaParcela": 201808,
+            "vencimentoDoDas": 20180831,
+            "dataDeArrecadacao": 20180829,
+            "valorPago": 11130.44
+        },
+        {
+            "mesDaParcela": 201809,
+            "vencimentoDoDas": 20180928,
+            "dataDeArrecadacao": 20180927,
+            "valorPago": 11192.93
+        },
+        {
+            "mesDaParcela": 201810,
+            "vencimentoDoDas": 20181031,
+            "dataDeArrecadacao": 20181024,
+            "valorPago": 11244.45
+        },
+        {
+            "mesDaParcela": 201811,
+            "vencimentoDoDas": 20181130,
+            "dataDeArrecadacao": 20181128,
+            "valorPago": 6034.06
+        },
+        {
+            "mesDaParcela": 201812,
+            "vencimentoDoDas": 20181228,
+            "dataDeArrecadacao": 20181228,
+            "valorPago": 6062.73
+        },
+        {
+            "mesDaParcela": 201901,
+            "vencimentoDoDas": 20190131,
+            "dataDeArrecadacao": 20190130,
+            "valorPago": 6091.41
+        },
+        {
+            "mesDaParcela": 201902,
+            "vencimentoDoDas": 20190228,
+            "dataDeArrecadacao": 20190430,
+            "valorPago": 6179.18
+        },
+        {
+            "mesDaParcela": 201903,
+            "vencimentoDoDas": 20190329,
+            "dataDeArrecadacao": 20190529,
+            "valorPago": 6209.61
+        },
+        {
+            "mesDaParcela": 201904,
+            "vencimentoDoDas": 20190430,
+            "dataDeArrecadacao": 20190626,
+            "valorPago": 6241.2
+        },
+        {
+            "mesDaParcela": 201905,
+            "vencimentoDoDas": 20190531,
+            "dataDeArrecadacao": 20190729,
+            "valorPago": 6268.71
+        },
+        {
+            "mesDaParcela": 201906,
+            "vencimentoDoDas": 20190628,
+            "dataDeArrecadacao": 20190830,
+            "valorPago": 6302.06
+        },
+        {
+            "mesDaParcela": 201907,
+            "vencimentoDoDas": 20190731,
+            "dataDeArrecadacao": 20190930,
+            "valorPago": 6331.32
+        },
+        {
+            "mesDaParcela": 201908,
+            "vencimentoDoDas": 20190830,
+            "dataDeArrecadacao": 20191029,
+            "valorPago": 6358.23
+        },
+        {
+            "mesDaParcela": 201909,
+            "vencimentoDoDas": 20190930,
+            "dataDeArrecadacao": 20191125,
+            "valorPago": 6386.32
+        },
+        {
+            "mesDaParcela": 201910,
+            "vencimentoDoDas": 20191031,
+            "dataDeArrecadacao": 20191224,
+            "valorPago": 6408.56
+        },
+        {
+            "mesDaParcela": 201911,
+            "vencimentoDoDas": 20191129,
+            "dataDeArrecadacao": 20200123,
+            "valorPago": 6430.21
+        },
+        {
+            "mesDaParcela": 201912,
+            "vencimentoDoDas": 20191230,
+            "dataDeArrecadacao": 20200228,
+            "valorPago": 6452.44
+        },
+        {
+            "mesDaParcela": 202001,
+            "vencimentoDoDas": 20200131,
+            "dataDeArrecadacao": 20200331,
+            "valorPago": 6469.41
+        },
+        {
+            "mesDaParcela": 202002,
+            "vencimentoDoDas": 20200228,
+            "dataDeArrecadacao": 20200430,
+            "valorPago": 6489.31
+        },
+        {
+            "mesDaParcela": 202003,
+            "vencimentoDoDas": 20200331,
+            "dataDeArrecadacao": 20200525,
+            "valorPago": 6505.69
+        },
+        {
+            "mesDaParcela": 202004,
+            "vencimentoDoDas": 20200430,
+            "dataDeArrecadacao": 20200610,
+            "valorPago": 6519.74
+        },
+        {
+            "mesDaParcela": 202005,
+            "vencimentoDoDas": 20200529,
+            "dataDeArrecadacao": 20200727,
+            "valorPago": 6532.02
+        },
+        {
+            "mesDaParcela": 202006,
+            "vencimentoDoDas": 20200630,
+            "dataDeArrecadacao": 20200813,
+            "valorPago": 6543.14
+        },
+        {
+            "mesDaParcela": 202007,
+            "vencimentoDoDas": 20200731,
+            "dataDeArrecadacao": 20200916,
+            "valorPago": 6552.5
+        },
+        {
+            "mesDaParcela": 202008,
+            "vencimentoDoDas": 20200831,
+            "dataDeArrecadacao": 20201019,
+            "valorPago": 6561.87
+        },
+        {
+            "mesDaParcela": 202009,
+            "vencimentoDoDas": 20200930,
+            "dataDeArrecadacao": 20201126,
+            "valorPago": 6571.23
+        },
+        {
+            "mesDaParcela": 202010,
+            "vencimentoDoDas": 20201030,
+            "dataDeArrecadacao": 20201224,
+            "valorPago": 6580.01
+        },
+        {
+            "mesDaParcela": 202011,
+            "vencimentoDoDas": 20201130,
+            "dataDeArrecadacao": 20210126,
+            "valorPago": 6589.37
+        },
+        {
+            "mesDaParcela": 202012,
+            "vencimentoDoDas": 20201230,
+            "dataDeArrecadacao": 20210225,
+            "valorPago": 6598.15
+        },
+        {
+            "mesDaParcela": 202101,
+            "vencimentoDoDas": 20210129,
+            "dataDeArrecadacao": 20210331,
+            "valorPago": 6605.75
+        },
+        {
+            "mesDaParcela": 202102,
+            "vencimentoDoDas": 20210226,
+            "dataDeArrecadacao": 20210429,
+            "valorPago": 6617.46
+        },
+        {
+            "mesDaParcela": 202103,
+            "vencimentoDoDas": 20210331,
+            "dataDeArrecadacao": 20210531,
+            "valorPago": 6629.74
+        },
+        {
+            "mesDaParcela": 202104,
+            "vencimentoDoDas": 20210430,
+            "dataDeArrecadacao": 20210628,
+            "valorPago": 6645.54
+        },
+        {
+            "mesDaParcela": 202105,
+            "vencimentoDoDas": 20210531,
+            "dataDeArrecadacao": 20210729,
+            "valorPago": 6663.68
+        },
+        {
+            "mesDaParcela": 202106,
+            "vencimentoDoDas": 20210630,
+            "dataDeArrecadacao": 20210827,
+            "valorPago": 6684.75
+        },
+        {
+            "mesDaParcela": 202107,
+            "vencimentoDoDas": 20210730,
+            "dataDeArrecadacao": 20210929,
+            "valorPago": 6709.91
+        },
+        {
+            "mesDaParcela": 202108,
+            "vencimentoDoDas": 20210831,
+            "dataDeArrecadacao": 20211028,
+            "valorPago": 6735.66
+        },
+        {
+            "mesDaParcela": 202109,
+            "vencimentoDoDas": 20210930,
+            "dataDeArrecadacao": 20211130,
+            "valorPago": 6764.33
+        },
+        {
+            "mesDaParcela": 202110,
+            "vencimentoDoDas": 20211029,
+            "dataDeArrecadacao": 20211230,
+            "valorPago": 6798.85
+        },
+        {
+            "mesDaParcela": 202111,
+            "vencimentoDoDas": 20211130,
+            "dataDeArrecadacao": 20220131,
+            "valorPago": 6843.91
+        },
+        {
+            "mesDaParcela": 202112,
+            "vencimentoDoDas": 20211230,
+            "dataDeArrecadacao": 20220224,
+            "valorPago": 6886.63
+        },
+        {
+            "mesDaParcela": 202201,
+            "vencimentoDoDas": 20220131,
+            "dataDeArrecadacao": 20220330,
+            "valorPago": 6931.1
+        },
+        {
+            "mesDaParcela": 202202,
+            "vencimentoDoDas": 20220225,
+            "dataDeArrecadacao": 20220429,
+            "valorPago": 6985.52
+        },
+        {
+            "mesDaParcela": 202203,
+            "vencimentoDoDas": 20220331,
+            "dataDeArrecadacao": 20220531,
+            "valorPago": 7034.08
+        },
+        {
+            "mesDaParcela": 202204,
+            "vencimentoDoDas": 20220429,
+            "dataDeArrecadacao": 20220630,
+            "valorPago": 7094.35
+        },
+        {
+            "mesDaParcela": 202205,
+            "vencimentoDoDas": 20220531,
+            "dataDeArrecadacao": 20220728,
+            "valorPago": 7154.04
+        },
+        {
+            "mesDaParcela": 202206,
+            "vencimentoDoDas": 20220630,
+            "dataDeArrecadacao": 20220824,
+            "valorPago": 7214.31
+        },
+        {
+            "mesDaParcela": 202207,
+            "vencimentoDoDas": 20220729,
+            "dataDeArrecadacao": 20220930,
+            "valorPago": 7282.77
+        },
+        {
+            "mesDaParcela": 202208,
+            "vencimentoDoDas": 20220831,
+            "dataDeArrecadacao": 20221031,
+            "valorPago": 7345.38
+        },
+        {
+            "mesDaParcela": 202209,
+            "vencimentoDoDas": 20220930,
+            "dataDeArrecadacao": 20221130,
+            "valorPago": 7405.07
+        },
+        {
+            "mesDaParcela": 202210,
+            "vencimentoDoDas": 20221031,
+            "dataDeArrecadacao": 20221227,
+            "valorPago": 7464.75
+        },
+        {
+            "mesDaParcela": 202211,
+            "vencimentoDoDas": 20221130,
+            "dataDeArrecadacao": 20230131,
+            "valorPago": 7530.29
+        },
+        {
+            "mesDaParcela": 202212,
+            "vencimentoDoDas": 20221229,
+            "dataDeArrecadacao": 20230228,
+            "valorPago": 7595.83
+        },
+        {
+            "mesDaParcela": 202301,
+            "vencimentoDoDas": 20230131,
+            "dataDeArrecadacao": 20230330,
+            "valorPago": 7649.66
+        },
+        {
+            "mesDaParcela": 202302,
+            "vencimentoDoDas": 20230228,
+            "dataDeArrecadacao": 20230428,
+            "valorPago": 7718.12
+        },
+        {
+            "mesDaParcela": 202303,
+            "vencimentoDoDas": 20230331,
+            "dataDeArrecadacao": 20230531,
+            "valorPago": 7771.96
+        },
+        {
+            "mesDaParcela": 202304,
+            "vencimentoDoDas": 20230428,
+            "dataDeArrecadacao": 20230630,
+            "valorPago": 7837.49
+        },
+        {
+            "mesDaParcela": 202305,
+            "vencimentoDoDas": 20230531,
+            "dataDeArrecadacao": 20230731,
+            "valorPago": 7900.11
+        },
+        {
+            "mesDaParcela": 202306,
+            "vencimentoDoDas": 20230630,
+            "dataDeArrecadacao": 20230831,
+            "valorPago": 7962.72
+        },
+        {
+            "mesDaParcela": 202307,
+            "vencimentoDoDas": 20230731,
+            "dataDeArrecadacao": 20230929,
+            "valorPago": 8029.42
+        },
+        {
+            "mesDaParcela": 202308,
+            "vencimentoDoDas": 20230831,
+            "dataDeArrecadacao": 20231031,
+            "valorPago": 8086.18
+        },
+        {
+            "mesDaParcela": 202309,
+            "vencimentoDoDas": 20230929,
+            "dataDeArrecadacao": 20231130,
+            "valorPago": 8144.7
+        },
+        {
+            "mesDaParcela": 202310,
+            "vencimentoDoDas": 20231031,
+            "dataDeArrecadacao": 20231228,
+            "valorPago": 8198.53
+        },
+        {
+            "mesDaParcela": 202311,
+            "vencimentoDoDas": 20231130,
+            "dataDeArrecadacao": 20240129,
+            "valorPago": 8250.61
+        },
+        {
+            "mesDaParcela": 202312,
+            "vencimentoDoDas": 20231228,
+            "dataDeArrecadacao": 20240229,
+            "valorPago": 8307.37
+        },
+        {
+            "mesDaParcela": 202401,
+            "vencimentoDoDas": 20240131,
+            "dataDeArrecadacao": 20240328,
+            "valorPago": 8354.18
+        },
+        {
+            "mesDaParcela": 202402,
+            "vencimentoDoDas": 20240229,
+            "dataDeArrecadacao": 20240430,
+            "valorPago": 8402.75
+        },
+        {
+            "mesDaParcela": 202403,
+            "vencimentoDoDas": 20240328,
+            "dataDeArrecadacao": 20240528,
+            "valorPago": 8454.83
+        },
+        {
+            "mesDaParcela": 202404,
+            "vencimentoDoDas": 20240430,
+            "dataDeArrecadacao": 20240626,
+            "valorPago": 8503.39
+        },
+        {
+            "mesDaParcela": 202405,
+            "vencimentoDoDas": 20240531,
+            "dataDeArrecadacao": 20240731,
+            "valorPago": 8549.62
+        },
+        {
+            "mesDaParcela": 202406,
+            "vencimentoDoDas": 20240628,
+            "dataDeArrecadacao": 20240830,
+            "valorPago": 8602.87
+        },
+        {
+            "mesDaParcela": 202407,
+            "vencimentoDoDas": 20240731,
+            "dataDeArrecadacao": 20240926,
+            "valorPago": 8653.78
+        },
+        {
+            "mesDaParcela": 202408,
+            "vencimentoDoDas": 20240830,
+            "dataDeArrecadacao": 20241030,
+            "valorPago": 8702.93
+        },
+        {
+            "mesDaParcela": 202409,
+            "vencimentoDoDas": 20240930,
+            "dataDeArrecadacao": 20241127,
+            "valorPago": 8757.35
+        },
+        {
+            "mesDaParcela": 202410,
+            "vencimentoDoDas": 20241031,
+            "dataDeArrecadacao": 20241227,
+            "valorPago": 8803.58
+        },
+        {
+            "mesDaParcela": 202411,
+            "vencimentoDoDas": 20241129,
+            "dataDeArrecadacao": 20250131,
+            "valorPago": 8858.0
+        }
+    ]
+}

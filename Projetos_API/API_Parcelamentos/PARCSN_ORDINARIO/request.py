@@ -12,6 +12,7 @@ cnpjs_com_erro = []
 
 def generate_data(modulo, caminho, idservico, client_code):
     periodo = datetime.now().strftime('%Y%m')
+    #periodo = '202502'
     read_keys()
     header = {
         "Authorization": f"Bearer {API_SECRETS.get('accessToken')}",
@@ -144,11 +145,49 @@ def generate_data(modulo, caminho, idservico, client_code):
                 "idSistema": "PARCSN",
                 "idServico": "DETPAGTOPARC165",
                 "versaoSistema": "1.0",    
-                "dados": '{{ \"numeroParcelamento\": 1, \"anoMesParcela\": {} }}'.format(periodo)
+                "dados": '{{ \"numeroParcelamento\": 3, \"anoMesParcela\": {} }}'.format(periodo)
         }
 
             url = URL_REQUEST
 
+    elif modulo == 'PERTSN':
+
+        if idservico == "OBTERPARC184":
+            caminho_arquivo = f'{caminho}.json'
+            data["pedidoDados"] = {
+                "idSistema": "PERTSN",
+                "idServico": "OBTERPARC184",
+                "versaoSistema": "1.0",
+                "dados": "{ \"numeroParcelamento\": 9101}"
+        }
+            
+            url = URL_REQUEST
+
+        elif idservico == "PARCELASPARAGERAR182":
+            caminho_arquivo = f'{caminho}.json'
+            data["pedidoDados"] = {
+                "idSistema": "PERTSN",
+                "idServico": "PARCELASPARAGERAR182",
+                "versaoSistema": "1.0",
+                "dados": ""
+        }
+            
+            url = URL_REQUEST
+
+
+    elif modulo == 'PARCSN-ESP':
+
+        if idservico == "PEDIDOSPARC173":
+            caminho_arquivo = f'{caminho}.json'
+            data["pedidoDados"] = {
+                "idSistema": "PARCSN-ESP",
+                "idServico": "PEDIDOSPARC173",
+                "versaoSistema": "1.0",
+                "dados": ""
+        }
+            
+            url = URL_REQUEST
+    
 
     elif modulo == 'PGMEI':
         data["pedidoDados"] = {
@@ -280,9 +319,9 @@ def generate_data(modulo, caminho, idservico, client_code):
 
         else:
             try:
-                pdf = json.loads(res.json().get('dados')).get("declaracao").get("pdf")
+                pdf = json.loads(res.json().get('dados')).get("docArrecadacaoPdfB64").get("pdf")
             except AttributeError:
-                pdf = json.loads(res.json().get('dados')).get('pdf')
+                pdf = json.loads(res.json().get('dados')).get('docArrecadacaoPdfB64')
 
 
             diretorio = os.path.dirname(caminho_arquivo)

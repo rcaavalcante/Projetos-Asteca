@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     for CLIENT_CODE in constants_parc_ordinario.CNPJS_LIST:
         # Define o caminho para o arquivo, agora utilizando o CLIENT_CODE da iteração
-        caminho = f'/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/Arquivos_gerados/Situação Fiscal_{CLIENT_CODE}_{data_atual}'
+        caminho = f'/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/Arquivos_gerados/{id_servico}_{CLIENT_CODE}_{data_atual}'
         
         try:
             # Gera o arquivo de situação fiscal

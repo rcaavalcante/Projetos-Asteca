@@ -1,0 +1,68 @@
+{
+    "numeroDas": "07182502761277178",
+    "dataVencimento": 20250129,
+    "paDasGerado": 202501,
+    "geradoEm": "20250127155946",
+    "numeroParcelamento": "0003",
+    "numeroParcela": "01",
+    "dataLimiteAcolhimento": 20250129,
+    "pagamentoDebitos": [
+        {
+            "paDebito": 202412,
+            "processo": "",
+            "discriminacoesDebito": [
+                {
+                    "tributo": "IRPJ",
+                    "principal": 13.8,
+                    "multa": 2.76,
+                    "juros": 0.0,
+                    "total": 16.56,
+                    "enteFederadoDestino": "Uni\u00e3o"
+                },
+                {
+                    "tributo": "CSLL",
+                    "principal": 8.78,
+                    "multa": 1.76,
+                    "juros": 0.0,
+                    "total": 10.54,
+                    "enteFederadoDestino": "Uni\u00e3o"
+                },
+                {
+                    "tributo": "COFINS",
+                    "principal": 31.98,
+                    "multa": 6.39,
+                    "juros": 0.0,
+                    "total": 38.37,
+                    "enteFederadoDestino": "Uni\u00e3o"
+                },
+                {
+                    "tributo": "PIS",
+                    "principal": 6.93,
+                    "multa": 1.39,
+                    "juros": 0.0,
+                    "total": 8.32,
+                    "enteFederadoDestino": "Uni\u00e3o"
+                },
+                {
+                    "tributo": "INSS",
+                    "principal": 105.41,
+                    "multa": 21.08,
+                    "juros": 0.0,
+                    "total": 126.49,
+                    "enteFederadoDestino": "Uni\u00e3o"
+                },
+                {
+                    "tributo": "ICMS",
+                    "principal": 84.08,
+                    "multa": 16.82,
+                    "juros": 0.0,
+                    "total": 100.9,
+                    "enteFederadoDestino": "GO"
+                }
+            ]
+        }
+    ],
+    "dataPagamento": 20250127,
+    "bancoAgencia": "237/1216",
+    "valorPagoArrecadacao": 301.18
+}
