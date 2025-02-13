@@ -1,6 +1,6 @@
 import PyPDF2
 import os
-from constantes import diretorio_main, referencia_pendencias, referencia_parcelamentos_rf, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
+from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
 import re
 import shutil
 
@@ -9,10 +9,13 @@ def processar_arquivos(diretorio):
 
     #arquivos_parcelamento_sispar_pgfn = []
     #arquivos_parcelamento_sispar_pgfn_simples = []
-    arquivos_parcelamento_rf = []
+    arquivos_parcelamento_geral = []
     arquivos_processados = 0
+    parc_receita = ["PERT", "PERSE", "RELP"]
+
 
     for arquivo in os.listdir(diretorio):
+        tem_parc_receita = False
         if arquivo.endswith('.pdf'):  # Verifica se o arquivo é um PDF
             arquivos_processados += 1
             caminho_pdf = os.path.join(diretorio, arquivo)
@@ -69,83 +72,52 @@ def processar_arquivos(diretorio):
                     #print(texto_pagina)
                     
 
-                    if "Receita Federal" in pendencias:
+                    if "PGFN" in pendencias:
                         #parcelamento_encontrado = False
 
-                        for texto in referencia_parcelamentos_rf:
+                        for texto in referencia_parcelamentos:
                             
                             if texto in texto_pagina:
-                                if referencia_parcelamentos_rf[0] in texto_pagina:
-                                    #print(f"{referencia_parcelamentos_rf[0]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
+                                if referencia_parcelamentos[0] in texto_pagina:
+                                    #print(f"{referencia_parcelamentos[0]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
                                     #parcelamento_encontrado = True
                                     #arquivos_parcelamento_sispar_pgfn_simples.append(arquivo)
-                                    arquivos_parcelamento_rf.append(arquivo)
+                                    arquivos_parcelamento_geral.append(arquivo)
                                     break
 
-                                if referencia_parcelamentos_rf[1] in texto_pagina:
-                                    #print(f"{referencia_parcelamentos_rf[1]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
+                                if referencia_parcelamentos[1] in texto_pagina:
+                                    #print(f"{referencia_parcelamentos[1]} encontrado na página {i + 1} do relatório do cliente {cnpj_cliente}")
                                     #arquivos_parcelamento_sispar_pgfn.append(arquivo)
                                     #parcelamento_encontrado = True
-                                    if arquivo not in arquivos_parcelamento_rf:
-                                        arquivos_parcelamento_rf.append(arquivo) 
+                                    if arquivo not in arquivos_parcelamento_geral:
+                                        arquivos_parcelamento_geral.append(arquivo) 
+
+                    elif "Receita Federal" in pendencias:
+
+                        for parc in parc_receita:
+                            if parc in texto_pagina:
+                                tem_parc_receita = True
+                            
+                                if parc_receita[0] in texto_pagina:
+                                    print(f"{parc_receita[0]} está no SITFIS do cliente: {cnpj_cliente}")
+
+                                if parc_receita[1] in texto_pagina:
+                                    print(f"{parc_receita[1]} está no SITFIS do cliente: {cnpj_cliente}")
+
+                                if parc_receita[2] in texto_pagina:
+                                    print(f"{parc_receita[2]} está no SITFIS do cliente: {cnpj_cliente}")
+
+                    if tem_parc_receita:
+                        pass
+                        #print(f"O cliente {cnpj_cliente} tem parcelamentos PERT, PERSE ou RELP")
+                    
 
             except:
                 print(f"Erro na leitura do arquivo: {arquivo}")
 
-           
-    if arquivos_parcelamento_rf:
-        print("\n", diretorio, "\n")
-        print(f"{arquivos_processados} arquivos processados")
-        print(f"\n{len(arquivos_parcelamento_rf)} Arquivos com parcelamentos ativos na PGFN: ")
-        for arquivo in arquivos_parcelamento_rf:
-            print(f"- {arquivo}")
-
-
-    else:
-        print(f"Não foram encontrados arquivos com Parcelamentos SISPAR ativos na PGFN.")
-
-    return arquivos_parcelamento_rf
-
-
-
-
-
-def mover_arquivos_para_pasta(arquivos, pasta_origem, pasta_destino):
-    # Contadores para sucesso e falha
-    sucesso = 0
-    falha = 0
-
-    if arquivos == []:
-        print("Nenhum SITFIS com parcelamento SISPAR-PGFN foi encontrado ")
-        #return "Nenhum SITFIS com parcelamento SISPAR-PGFN foi encontrado"
-    
-    else: 
-        # Cria a pasta de destino se ela não existir
-        if not os.path.exists(pasta_destino):
-            os.makedirs(pasta_destino)
-        
-        # Move os arquivos para a pasta de destino
-        for arquivo in arquivos:
-            caminho_origem = os.path.join(pasta_origem, arquivo)
-            caminho_destino = os.path.join(pasta_destino, arquivo)
-            
-            try:
-                # Move o arquivo
-                shutil.move(caminho_origem, caminho_destino)
-                sucesso += 1  # Incrementa o contador de sucesso
-                print(f"Arquivo {arquivo} movido para {pasta_destino}")
-            except Exception as e:
-                falha += 1  # Incrementa o contador de falha
-                print(f"Erro ao mover o arquivo {arquivo}: {e}")
-            print("-----------------------------------------------------------------")
-        
-        # Exibe o resumo
-        return(print(f"\nResumo da movimentação dos arquivos:\nArquivos movidos com sucesso: {sucesso}\nArquivos que falharam: {falha}"))
-
 
 # Conferindo a lista de arquivos 
 if __name__ == "__main__":
-    arquivos = processar_arquivos(diretorio_main)
-    origem = diretorio_main
-    destino = f"{diretorio_main}/pendecias_rf"
-    #mover_arquivos_para_pasta(arquivos, origem, destino)
+    processar_arquivos(diretorio_main)
+    
+

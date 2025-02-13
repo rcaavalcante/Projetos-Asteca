@@ -25,3 +25,5 @@ referencia_parcelamentos_rf = [
     "Parcelamento com Exigibilidade Suspensa (PARCSN/PARCMEI)",
     "Pendência - Parcelamento (PARCSN/PARCMEI)"
 ]
+
+parc_receita = ["PERT", "PERSE", "RELP"]
