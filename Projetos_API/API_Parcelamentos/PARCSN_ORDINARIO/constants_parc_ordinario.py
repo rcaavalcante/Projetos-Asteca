@@ -1,7 +1,8 @@
 import json
+from Verificacao_contas_atrasadas import arquivos_parcsn, arquivos_pertsn, arquivos_persesn, arquivos_relpsn
 
 # Caminho para o arquivo keys.json
-KEYS_FILE = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/keys.json'
+KEYS_FILE = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/PARCSN_ORDINARIO/keys.json'
 
 
 # Carrega as credenciais da API a partir do arquivo keys.json
@@ -25,9 +26,9 @@ API_SECRETS = json.loads(secrets)
 ACCOUNTANT_CODE = '33262015000187'
 WARRANT_CODE = ''
 #CLIENT_CODE = '33262015000187'
-CNPJS_LIST = [          
-            '10556232000184'
-            ]
+CNPJS_LIST = ['10556232000184']
+
+
 
 
 # Função para atualizar o arquivo keys.json com novos atributos

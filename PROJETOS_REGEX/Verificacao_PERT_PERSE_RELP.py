@@ -1,9 +1,11 @@
 import PyPDF2
 import os
+from datetime import datetime
 from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
 import re
 import shutil
 from Verificacao_pendencias_RF import processar_arquivos
+
 
 
 def verificacao_parc_rf():
@@ -143,24 +145,95 @@ def verificacao_parc_rf():
             print("**** Não há arquivos com parcelamento do tipo PARCSN ****")
                     
        
-                       
+    return sorted(arquivos_PARCSN), sorted(arquivos_PERTSN), sorted(arquivos_PERSESN), sorted(arquivos_RELPSN)           
+
+def salvar_todos_arquivos_parcelamentos(arquivos_PARCSN, arquivos_PERTSN, arquivos_PERSESN, arquivos_RELPSN, diretorio_destino):
+    periodo = datetime.now().strftime('%Y%m')
+    """
+    Função para salvar os nomes de arquivos de várias listas de parcelamentos em um único arquivo de texto.
+
+    Args:
+    - arquivos_PARCSN (list): Lista de arquivos PARCSN.
+    - arquivos_PERTSN (list): Lista de arquivos PERTSN.
+    - arquivos_PERSESN (list): Lista de arquivos PERSESN.
+    - arquivos_RELPSN (list): Lista de arquivos RELPSN.
+    - diretorio_destino (str): O diretório onde o arquivo de texto será salvo.
+    """
+    # Certifique-se de que o diretório existe, caso contrário, crie
+    if not os.path.exists(diretorio_destino):
+        os.makedirs(diretorio_destino)
+
+    # Defina o nome do arquivo de texto
+    arquivo_saida = os.path.join(diretorio_destino, f'todos_arquivos_parcelamentos_{periodo}.txt')
+
+    # Abra o arquivo para escrita
+    with open(arquivo_saida, 'w') as f:
+        # Escreve todos os arquivos das listas no arquivo de texto
+        f.write("Arquivos PARCSN:\n")
+        for arquivo in arquivos_PARCSN:
+            f.write(f"{arquivo}\n")
+
+        f.write("\nArquivos PERTSN:\n")
+        for arquivo in arquivos_PERTSN:
+            f.write(f"{arquivo}\n")
+
+        f.write("\nArquivos PERSESN:\n")
+        for arquivo in arquivos_PERSESN:
+            f.write(f"{arquivo}\n")
+
+        f.write("\nArquivos RELPSN:\n")
+        for arquivo in arquivos_RELPSN:
+            f.write(f"{arquivo}\n")
+
+    print(f"Arquivo de resultados criado em: {arquivo_saida}")
 
 
+def salvar_listas_em_arquivos(listas, diretorio_destino):
+    periodo = datetime.now().strftime('%Y%m')
+    """
+    Função para salvar várias listas de arquivos em arquivos de texto separados.
 
+    Args:
+    - listas (dict): Um dicionário onde as chaves são os nomes das listas
+                     e os valores são as listas de arquivos.
+    - diretorio_destino (str): O diretório onde os arquivos de texto serão salvos.
+    """
+    # Certifique-se de que o diretório existe, caso contrário, crie
+    if not os.path.exists(diretorio_destino):
+        os.makedirs(diretorio_destino)
 
+    # Itera sobre as listas e cria um arquivo para cada uma
+    for lista_nome, lista_arquivos in listas.items():
+        # Define o nome do arquivo baseado no nome da lista
+        nome = f'{lista_nome}_{periodo}.txt'
+        arquivo_saida = os.path.join(diretorio_destino, nome)
 
+        # Abre o arquivo para escrita
+        with open(arquivo_saida, 'w') as f:
+            f.write(f"Arquivos {lista_nome}:\n")
+            for arquivo in lista_arquivos:
+                f.write(f"{arquivo}\n")
 
+        print(f"Arquivo {nome} criado em: {arquivo_saida}")
 
-    '''
-    print(f"{arquivos_processados} arquivos processados")
-    print(f"{len(somente_PARCSN)} arquivos que possuem somente PARCSN: ")
-    for i in sorted(somente_PARCSN):
-        print(i)'''
 
 
 # Conferindo a lista de arquivos 
 if __name__ == "__main__":
-    verificacao_parc_rf()
-    
-    
+    # Chama a função verificacao_parc_rf e desempacota o retorno em variáveis
+    arquivos_PARCSN, arquivos_PERTSN, arquivos_PERSESN, arquivos_RELPSN = verificacao_parc_rf()
 
+    # Define o caminho do diretório onde os arquivos de texto serão salvos
+    diretorio_destino = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos'
+
+    # Criando um dicionário com as listas a serem salvas
+    listas = {
+        'arquivos_PARCSN': arquivos_PARCSN,
+        'arquivos_PERTSN': arquivos_PERTSN,
+        'arquivos_PERSESN': arquivos_PERSESN,
+        'arquivos_RELPSN': arquivos_RELPSN
+    }
+
+    # Chama a função para salvar as listas nos arquivos de texto
+    #salvar_listas_em_arquivos(listas, diretorio_destino)
+    salvar_todos_arquivos_parcelamentos(arquivos_PARCSN, arquivos_PERTSN, arquivos_PERSESN, arquivos_RELPSN, diretorio_destino)

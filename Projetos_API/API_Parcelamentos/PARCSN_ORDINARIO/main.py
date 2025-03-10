@@ -8,7 +8,7 @@ from datetime import datetime
 processamento = 'PARCSN'
 periodo_alvo = datetime.now().strftime('%Y%m') # Data atual no formato YYYYMM
 data_atual = datetime.now().strftime('%Y%m%d')  # Data atual no formato YYYYMMDD
-id_servico = "GERARDAS161"
+id_servico = "PARCELASPARAGERAR162"
 
 
 if __name__ == "__main__":

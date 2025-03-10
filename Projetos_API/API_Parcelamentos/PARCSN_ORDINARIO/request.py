@@ -213,6 +213,17 @@ def generate_data(modulo, caminho, idservico, client_code):
             
             url = URL_TRANSMIT
 
+        elif idservico == "PARCELASPARAGERAR192":
+            caminho_arquivo = f'{caminho}.json'
+            data["pedidoDados"] = {
+                "idSistema": "RELPSN",
+                "idServico": "PARCELASPARAGERAR192",
+                "versaoSistema": "1.0",
+                "dados": ""
+        }
+            
+            url = URL_REQUEST
+
 
     elif modulo == 'PGMEI':
         data["pedidoDados"] = {

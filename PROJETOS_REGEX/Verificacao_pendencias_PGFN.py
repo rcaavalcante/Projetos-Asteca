@@ -1,6 +1,6 @@
 import PyPDF2
 import os
-from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
+from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_parc_pgfn, diretorio_sispar_pgfn_simples
 import re
 import shutil
 
@@ -104,7 +104,7 @@ def processar_arquivos(diretorio):
     else:
         print(f"Não foram encontrados arquivos com Parcelamentos SISPAR ativos na PGFN.")
 
-    #return arquivos_parcelamento_pgfn
+    return arquivos_parcelamento_pgfn
 
 
 
@@ -147,9 +147,10 @@ def mover_arquivos_para_pasta(arquivos, pasta_origem, pasta_destino):
 if __name__ == "__main__":
     processar_arquivos(diretorio_main)
     # arquivos_alvo = processar_arquivos(diretorio_main)
+
     # pasta_origem = os.path.join(diretorio_main)
-    # pasta_destino = diretorio_sispar_pgfn
-    #mover_arquivos_para_pasta(arquivos_alvo, pasta_origem, pasta_destino)
+    # pasta_destino = diretorio_parc_pgfn
+    # mover_arquivos_para_pasta(arquivos_alvo, pasta_origem, pasta_destino)
 
 
 # Bloco principal para execução direta do script

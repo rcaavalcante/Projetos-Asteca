@@ -1,10 +1,14 @@
 import PyPDF2
 import os
-from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
+from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_parc_pgfn, diretorio_sispar_pgfn_simples
 import re
 import pandas as pd
+from datetime import datetime
+
+data_atual = datetime.now().strftime('%Y%m%d')
 
 def pegar_contas_parcelamentos(diretorio):
+
     # Dicionário para armazenar as contas de cada cliente
     contas_por_cliente = {}
 
@@ -83,12 +87,12 @@ def pegar_contas_parcelamentos(diretorio):
 
 # Bloco principal para execução direta do script
 if __name__ == "__main__":
-    contas = pegar_contas_parcelamentos(diretorio_main)
+    contas = pegar_contas_parcelamentos(diretorio_parc_pgfn)
     #print(type(contas))
 
     df = pd.DataFrame(list(contas.items()), columns=['CNPJ', 'Contas'])
 
     # Agora, exportando esse DataFrame para um arquivo Excel
-    df.to_excel('Parcelamentos_PGFN.xlsx', index=False) 
+    df.to_excel(f'Parcelamentos_PGFN_{data_atual}.xlsx', index=False) 
 
-    print("Arquivo Excel 'Parcelamentos_PGFN.xlsx' gerado com sucesso!")
+    print(f"Arquivo Excel 'Parcelamentos_PGFN_{data_atual}.xlsx' gerado com sucesso!")

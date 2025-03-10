@@ -3,7 +3,7 @@
 
 diretorio_main = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Integra_Contador/Files/Arquivos_gerados'
 diretorio_teste = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Integra_Contador/Files/Arquivos_teste/'
-diretorio_sispar_pgfn = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Integra_Contador/Files/Arquivos_gerados/SISPAR_PGFN'
+diretorio_parc_pgfn = '/Users/rafaellacavalcante/Asteca/PROJETOS_REGEX/Clientes_parcelamentos_PGFN'
 diretorio_pgfn = '/Users/rafaellacavalcante/Asteca/PROJETOS_REGEX/PENDENCIA_PGFN'
 diretorio_sispar_pgfn_simples = '/Users/rafaellacavalcante/Asteca/PROJETOS_REGEX/PENDENCIA_PGFN/SITFIS_SISPAR_PGFN_SIMPLES/'
 diretorio_gen1 = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Integra_Contador/Files/Arquivos_gerados/Gen1/'
