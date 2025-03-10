@@ -1,6 +1,6 @@
 import PyPDF2
 import os
-from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
+from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_parc_pgfn, diretorio_sispar_pgfn_simples
 import re
 
 
@@ -120,5 +120,5 @@ def processar_arquivos(diretorio):
 
 # Bloco principal para execução direta do script
 if __name__ == "__main__":
-    processar_arquivos(diretorio_pgfn)
+    processar_arquivos(diretorio_main)
             

@@ -1,6 +1,6 @@
 import PyPDF2
 import os
-from constantes import diretorio_main, referencia_pendencias, referencia_parcelamentos_rf, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
+from constantes import diretorio_main, referencia_pendencias, referencia_parcelamentos_rf, referencia_parcelamentos, diretorio_pgfn, diretorio_parc_pgfn, diretorio_sispar_pgfn_simples
 import re
 import shutil
 
@@ -92,7 +92,7 @@ def processar_arquivos(diretorio):
             except:
                 print(f"Erro na leitura do arquivo: {arquivo}")
 
-    '''      
+       
     if arquivos_parcelamento_rf:
         print("\n", diretorio, "\n")
         print(f"{arquivos_processados} arquivos processados")
@@ -103,7 +103,7 @@ def processar_arquivos(diretorio):
 
 
     else:
-        print(f"Não foram encontrados arquivos com Parcelamentos SISPAR ativos na PGFN.")'''
+        print(f"Não foram encontrados arquivos com Parcelamentos SISPAR ativos na PGFN.")
 
     return arquivos_parcelamento_rf
 
@@ -149,4 +149,4 @@ if __name__ == "__main__":
     arquivos = processar_arquivos(diretorio_main)
     origem = diretorio_main
     destino = f"{diretorio_main}/pendecias_rf"
-    #mover_arquivos_para_pasta(arquivos, origem, destino)
+    mover_arquivos_para_pasta(arquivos, origem, destino)

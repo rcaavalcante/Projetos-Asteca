@@ -1,7 +1,7 @@
 import PyPDF2
 import os
 from datetime import datetime
-from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_sispar_pgfn, diretorio_sispar_pgfn_simples
+from constantes import diretorio_main, diretorio_teste, referencia_pendencias, referencia_parcelamentos, diretorio_pgfn, diretorio_parc_pgfn, diretorio_sispar_pgfn_simples
 import re
 import shutil
 from Verificacao_pendencias_RF import processar_arquivos
@@ -235,5 +235,5 @@ if __name__ == "__main__":
     }
 
     # Chama a função para salvar as listas nos arquivos de texto
-    #salvar_listas_em_arquivos(listas, diretorio_destino)
-    salvar_todos_arquivos_parcelamentos(arquivos_PARCSN, arquivos_PERTSN, arquivos_PERSESN, arquivos_RELPSN, diretorio_destino)
+    salvar_listas_em_arquivos(listas, diretorio_destino)
+    #salvar_todos_arquivos_parcelamentos(arquivos_PARCSN, arquivos_PERTSN, arquivos_PERSESN, arquivos_RELPSN, diretorio_destino)

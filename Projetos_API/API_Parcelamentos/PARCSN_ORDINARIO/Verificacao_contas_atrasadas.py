@@ -1,10 +1,15 @@
 import re
+from datetime import datetime
+
+data_atual = datetime.now().strftime('%Y%m')
 
 # Caminhos dos arquivos
-caminho_arquivo_parcsn = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos/arquivos_PARCSN_202502.txt'
-caminho_arquivo_pertsn = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos/arquivos_PERTSN_202502.txt'
-caminho_arquivo_persesn = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos/arquivos_PERSESN_202502.txt'
-caminho_arquivo_relpsn = '/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos/arquivos_RELPSN_202502.txt'
+
+caminho_arquivo_geral = f"/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos/todos_arquivos_parcelamentos_{data_atual}.txt"
+caminho_arquivo_parcsn = f'/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos/arquivos_PARCSN_{data_atual}.txt'
+caminho_arquivo_pertsn = f'/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos/arquivos_PERTSN_{data_atual}.txt'
+caminho_arquivo_persesn = f'/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos/arquivos_PERSESN_{data_atual}.txt'
+caminho_arquivo_relpsn = f'/Users/rafaellacavalcante/Asteca/Projetos_API/API_Parcelamentos/Files/arquivos_parcelamentos/arquivos_RELPSN_{data_atual}.txt'
 
 # Listas para armazenar os CNPJs
 arquivos_parcsn = []
@@ -34,7 +39,7 @@ extraindo_cnpj(caminho_arquivo_relpsn, arquivos_relpsn)
 
 #print(len(arquivos_parcsn))
 
-'''
+
 # Exibir os CNPJs encontrados um por um
 print("CNPJs em PARCSN:")
 for cnpj in arquivos_parcsn:
@@ -50,6 +55,6 @@ for cnpj in arquivos_persesn:
 
 print("\nCNPJs em RELPSN:")
 for cnpj in arquivos_relpsn:
-    print(cnpj)'''
+    print(cnpj)
 
 
