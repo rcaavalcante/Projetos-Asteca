@@ -1,0 +1,40 @@
+{
+    "listaParcelas": [
+        {
+            "parcela": 202407,
+            "valor": 1164.58
+        },
+        {
+            "parcela": 202408,
+            "valor": 1164.58
+        },
+        {
+            "parcela": 202409,
+            "valor": 1164.58
+        },
+        {
+            "parcela": 202410,
+            "valor": 1164.58
+        },
+        {
+            "parcela": 202411,
+            "valor": 1164.58
+        },
+        {
+            "parcela": 202412,
+            "valor": 1164.58
+        },
+        {
+            "parcela": 202501,
+            "valor": 1164.58
+        },
+        {
+            "parcela": 202502,
+            "valor": 1164.58
+        },
+        {
+            "parcela": 202503,
+            "valor": 1164.58
+        }
+    ]
+}

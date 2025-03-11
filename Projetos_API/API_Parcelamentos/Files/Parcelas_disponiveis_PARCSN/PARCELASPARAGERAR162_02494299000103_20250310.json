@@ -1,0 +1,56 @@
+{
+    "listaParcelas": [
+        {
+            "parcela": 202403,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202404,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202405,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202406,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202407,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202408,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202409,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202410,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202411,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202412,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202501,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202502,
+            "valor": 345.12
+        },
+        {
+            "parcela": 202503,
+            "valor": 345.12
+        }
+    ]
+}

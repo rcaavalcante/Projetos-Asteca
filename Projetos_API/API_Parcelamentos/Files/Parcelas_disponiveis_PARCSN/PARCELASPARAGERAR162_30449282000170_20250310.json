@@ -1,0 +1,12 @@
+{
+    "listaParcelas": [
+        {
+            "parcela": 202502,
+            "valor": 1950.67
+        },
+        {
+            "parcela": 202503,
+            "valor": 1950.67
+        }
+    ]
+}

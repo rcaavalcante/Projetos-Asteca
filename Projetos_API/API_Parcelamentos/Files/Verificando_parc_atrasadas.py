@@ -106,7 +106,7 @@ tipos_parcelamentos = ['ParcelamentoSimples', 'ParcelamentoFacilitado', 'Parcela
 atrasos = [3, 1, 2]
 
 if __name__ == "__main__":
-    #parcelamentos_disponiveis(diretorio_geral)
+    parcelamentos_disponiveis(diretorio_geral)
     lista_cnpjs, tipos_parcelamentos, atrasos = parcelamentos_disponiveis(diretorio_geral)
     #print(lista_cnpjs)
 

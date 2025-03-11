@@ -149,4 +149,4 @@ if __name__ == "__main__":
     arquivos = processar_arquivos(diretorio_main)
     origem = diretorio_main
     destino = f"{diretorio_main}/pendecias_rf"
-    mover_arquivos_para_pasta(arquivos, origem, destino)
+    #mover_arquivos_para_pasta(arquivos, origem, destino)

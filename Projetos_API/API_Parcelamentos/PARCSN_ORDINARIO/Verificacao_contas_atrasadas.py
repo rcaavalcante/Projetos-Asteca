@@ -41,20 +41,20 @@ extraindo_cnpj(caminho_arquivo_relpsn, arquivos_relpsn)
 
 
 # Exibir os CNPJs encontrados um por um
-print("CNPJs em PARCSN:")
+print(f"{len(arquivos_parcsn)} CNPJs em PARCSN:")
 for cnpj in arquivos_parcsn:
-    print(cnpj)
+    print(f'"{cnpj}",')
 
-print("\nCNPJs em PERTSN:")
+print(f"\n{len(arquivos_pertsn)} CNPJs em PERTSN:")
 for cnpj in arquivos_pertsn:
-    print(cnpj)
+    print(f'"{cnpj}",')
 
-print("\nCNPJs em PERSESN:")
+print(f"\n{len(arquivos_persesn)} CNPJs em PERSESN:")
 for cnpj in arquivos_persesn:
-    print(cnpj)
+    print(f'"{cnpj}",')
 
-print("\nCNPJs em RELPSN:")
+print(f"\n{len(arquivos_relpsn)} CNPJs em RELPSN:")
 for cnpj in arquivos_relpsn:
-    print(cnpj)
+    print(f'"{cnpj}",')
 
 
