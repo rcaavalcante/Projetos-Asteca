@@ -34,7 +34,13 @@ conteudo_xmls = ler_xmls_na_pasta(caminho_teste)
 
 print(conteudo_xmls)
 
+valor_nf = conteudo_xmls['nfeProc']['NFe']['infNFe']['total']['ICMSTot']['vNF']
+print("Valor da nota: ", valor_nf)
+
 print("ide")
+
+ide = conteudo_xmls['nfeProc']['NFe']['infNFe']['@Id'][3:]
+print(ide)
 
 nat_operacao = conteudo_xmls['nfeProc']['NFe']['infNFe']['ide']['natOp']
 #print(nat_operacao)

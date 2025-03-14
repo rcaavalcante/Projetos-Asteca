@@ -4,6 +4,7 @@ import pandas as pd
 
 # Função para ler todos os arquivos XML em uma pasta e armazenar seu conteúdo
 def ler_xmls_na_pasta(caminho_pasta):
+    sucessos = 0
     # Lista para armazenar os conteúdos dos arquivos XML
     dados_tabela = []
     
@@ -127,13 +128,15 @@ def ler_xmls_na_pasta(caminho_pasta):
                 # Adicionando a linha ao conjunto de dados
                 dados_tabela.append(linha) 
                 
-                print(f"Arquivo {nome_arquivo} lido com sucesso!")
+                #print(f"Arquivo {nome_arquivo} lido com sucesso!")
+                sucessos += 1
 
     # Criando o DataFrame com os dados coletados
     df = pd.DataFrame(dados_tabela)
 
     # Retorna o DataFrame com as informações extraídas
-    return df
+    #return df
+    return sucessos
 
 
 # Caminho para a pasta onde os arquivos XML estão armazenados
@@ -141,7 +144,9 @@ caminho_pasta = '/Users/rafaellacavalcante/Asteca/Projeto_NF/Arquivos_entrada_te
 caminho_teste = '/Users/rafaellacavalcante/Asteca/Projeto_NF/teste'
 
 # Chamando a função para ler os XMLs e gerar a tabela
-data_frame = ler_xmls_na_pasta(caminho_pasta)
+#data_frame = ler_xmls_na_pasta(caminho_pasta)
+sucessos = ler_xmls_na_pasta(caminho_teste)
+print(sucessos)
 
 # Salvando o DataFrame em um arquivo CSV
-data_frame.to_csv('tabela_nfs_teste1.csv', index=False)
+#data_frame.to_csv('tabela_nfs_teste1.csv', index=False)
